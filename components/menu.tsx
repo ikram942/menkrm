@@ -4,6 +4,7 @@ import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectVa
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { MenuIcon } from "lucide-react";
 import { useTranslations, useLocale } from "next-intl";
+import { FaFacebookF, FaInstagram, FaWhatsapp, FaTiktok, FaUser } from "react-icons/fa";
 
 export function Menu() {
     const locale = useLocale();
@@ -55,36 +56,37 @@ export function Menu() {
             </Select>
 
             {/* Login */}
-            <div className="login">
-                <i className="far fa-user"></i>
-                <span>{c('login')}</span>
-            </div>
+            <button className="flex items-center gap-2 px-4 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-100 transition-colors duration-200 cursor-pointer w-full">
+                <FaUser className="w-4 h-4 text-gray-600" />
+                <span className="text-base">{c('login')}</span>
+            </button>
 
             {/* Socials */}
-            <div className="socials">
-                <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="social-icon facebook">
-                    <i className="fab fa-facebook-f"></i>
+            <div className="flex gap-8 justify-center items-center py-3">
+                <a href="https://www.facebook.com/share/1CTE4tAxzr/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">
+                    <FaFacebookF className="w-6 h-6 text-[#1877f2] transition-all duration-300 ease-in-out hover:text-[#f1c40f] hover:scale-125 hover:-rotate-6" style={{ filter: 'none' }} onMouseEnter={e => (e.currentTarget.style.filter = 'drop-shadow(0 0 8px #f1c40f)')} onMouseLeave={e => (e.currentTarget.style.filter = 'none')} />
                 </a>
-                <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" className="social-icon instagram">
-                    <i className="fab fa-instagram"></i>
+                <a href="https://www.instagram.com/savilmen?igsh=MWd6aDZpbG5mamI0bw%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer">
+                    <FaInstagram className="w-6 h-6 text-[#e1306c] transition-all duration-300 ease-in-out hover:text-[#f1c40f] hover:scale-125 hover:-rotate-6" style={{ filter: 'none' }} onMouseEnter={e => (e.currentTarget.style.filter = 'drop-shadow(0 0 8px #f1c40f)')} onMouseLeave={e => (e.currentTarget.style.filter = 'none')} />
                 </a>
-                <a href="https://www.whatsapp.com" target="_blank" rel="noopener noreferrer" className="social-icon whatsapp">
-                    <i className="fab fa-whatsapp"></i>
+                <a href="https://wa.me/" target="_blank" rel="noopener noreferrer">
+                    <FaWhatsapp className="w-6 h-6 text-[#25D366] transition-all duration-300 ease-in-out hover:text-[#f1c40f] hover:scale-125 hover:-rotate-6" style={{ filter: 'none' }} onMouseEnter={e => (e.currentTarget.style.filter = 'drop-shadow(0 0 8px #f1c40f)')} onMouseLeave={e => (e.currentTarget.style.filter = 'none')} />
                 </a>
-                <a href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer" className="social-icon tiktok">
-                    <i className="fab fa-tiktok"></i>
+                <a href="https://www.tiktok.com/@mensavil7" target="_blank" rel="noopener noreferrer">
+                    <FaTiktok className="w-6 h-6 text-[#141515] transition-all duration-300 ease-in-out hover:text-[#f1c40f] hover:scale-125 hover:-rotate-6" style={{ filter: 'none' }} onMouseEnter={e => (e.currentTarget.style.filter = 'drop-shadow(0 0 8px #f1c40f)')} onMouseLeave={e => (e.currentTarget.style.filter = 'none')} />
                 </a>
             </div>
 
             {/* Footer */}
-            <div className="bottom-bar">
-                <footer>
-                    <div className="scroll-container">
-                        <p className="scroll-text">
-                            {c('footer')}
-                        </p>
-                    </div>
-                </footer>
+            <div className="absolute bottom-0 left-0 right-0 h-12 py-3 overflow-hidden">
+                <div className="marquee-wrapper whitespace-nowrap" dir="ltr">
+                    <span className="marquee-text">
+                        {c('footer')} &nbsp;&nbsp;&nbsp;✦&nbsp;&nbsp;&nbsp;
+                    </span>
+                    <span className="marquee-text" aria-hidden="true">
+                        {c('footer')} &nbsp;&nbsp;&nbsp;✦&nbsp;&nbsp;&nbsp;
+                    </span>
+                </div>
             </div>
         </SheetContent>
     </Sheet>)

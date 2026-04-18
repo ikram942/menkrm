@@ -121,10 +121,52 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
+
   html {
     @apply font-sans;
   }
+}
+
+/* Marquee footer animation */
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes marquee-scroll-rtl {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.marquee-wrapper {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  white-space: nowrap;
+}
+
+.marquee-text {
+  display: inline-block;
+  flex-shrink: 0;
+  min-width: 100%;
+  animation: marquee-scroll 10s linear infinite;
+  white-space: nowrap;
+}
+
+[dir="rtl"] .marquee-text {
+  animation: marquee-scroll-rtl 10s linear infinite;
 }
