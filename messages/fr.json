@@ -1,0 +1,37 @@
+{
+  "navigation": {
+    "home": "Accueil",
+    "product": "Produit",
+    "tutorials": "Tutoriels",
+    "contactUs": "Nous contacter",
+    "manageSubscription": "Gérer l'abonnement"
+  },
+  "common": {
+    "welcome": "Bienvenue",
+    "language": "Langue",
+    "loading": "Chargement...",
+    "error": "Une erreur est survenue",
+    "success": "Succès",
+    "cancel": "Annuler",
+    "submit": "Soumettre"
+  },
+  "hero": {
+    "title": "Bienvenue sur Mensavil",
+    "subtitle": "Votre plateforme de gestion des abonnements",
+    "cta": "Commencer",
+    "title1": "Produits capillaires 100% naturels Savil pour hommes",
+    "description1": "Essentiels de grooming haut de gamme — adoptés par plus de 100 000 hommes.",
+    "button1": "ACHETER MAINTENANT",
+    "title2": "Conçu pour les hommes qui ne font aucun compromis !",
+    "description2": "Élevez votre routine grooming avec des produits premium conçus pour la performance.",
+    "button2": "PACKS"
+  },
+  "bodypro": {
+    "heading": "POUR LES HOMMES QUI NE FONT AUCUN COMPROMIS",
+    "product1": "Pack de soin capillaire",
+    "product2": "Shampoing",
+    "product3": "Après-shampoing",
+    "product4": "Huile pour cheveux et barbe",
+    "pageIndicator": "Produit {current} sur {count}"
+  }
+}

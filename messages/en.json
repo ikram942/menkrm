@@ -1,0 +1,37 @@
+{
+  "navigation": {
+    "home": "Home",
+    "product": "Product",
+    "tutorials": "Tutorials",
+    "contactUs": "Contact Us",
+    "manageSubscription": "Manage Subscription"
+  },
+  "common": {
+    "welcome": "Welcome",
+    "language": "Language",
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "success": "Success",
+    "cancel": "Cancel",
+    "submit": "Submit"
+  },
+  "hero": {
+    "title": "Welcome to Mensavil",
+    "subtitle": "Your platform for managing subscriptions",
+    "cta": "Get Started",
+    "title1": "100% Natural Hair Products Savil by Men for Men",
+    "description1": "Premium men’s grooming essentials — trusted by over 100,000 men.",
+    "button1": "SHOP NOW",
+    "title2": "Made for men who do not compromise!",
+    "description2": "Take your grooming routine to the next level with premium products built for performance.",
+    "button2": "SHOP SETS"
+  },
+  "bodypro": {
+    "heading": "FOR MEN WHO DON'T COMPROMISE",
+    "product1": "Hair Care Pack",
+    "product2": "Shampoo",
+    "product3": "Conditioner",
+    "product4": "Hair & Beard Oil",
+    "pageIndicator": "Product {current} of {count}"
+  }
+}
