@@ -13,7 +13,17 @@
     "error": "حدث خطأ",
     "success": "نجح",
     "cancel": "إلغاء",
-    "submit": "إرسال"
+    "submit": "إرسال",
+    "menu": "القائمة",
+    "country": "البلد",
+    "login": "تسجيل الدخول",
+    "footer": "© 2026 MenSavil — جميع الحقوق محفوظة • منتجات تجميل فاخرة",
+    "countryMA": "🇲🇦 المغرب (MAD)",
+    "countryFR": "🇫🇷 فرنسا (EUR)",
+    "countryUS": "🇺🇸 الولايات المتحدة (USD)",
+    "countryES": "🇪🇸 إسبانيا (EUR)",
+    "countryAE": "🇦🇪 الإمارات (AED)",
+    "countryCA": "🇨🇦 كندا (CAD)"
   },
   "hero": {
     "title": "مرحبا بك في Mensavil",
@@ -33,5 +43,22 @@
     "product3": "بلسم",
     "product4": "زيت الشعر واللحية",
     "pageIndicator": "المنتج {current} من {count}"
+  },
+  "product": {
+    "title": "صفحة المنتج",
+    "description": "هذه هي صفحة المنتج."
+  },
+  "tutorials": {
+    "title": "صفحة البرامج التعليمية",
+    "description": "هذه هي صفحة البرامج التعليمية."
+  },
+  "manageSubscription": {
+    "title": "صفحة إدارة الاشتراك",
+    "description": "هذه هي صفحة إدارة الاشتراك."
+  },
+  "contactUs": {
+    "title": "اتصل بنا",
+    "description": "نحن هنا للمساعدة! سواء كان لديك سؤال، تعليق، أو أردت فقط إلقاء التحية، نود أن نسمع منك.",
+    "button": "إرسال رسالة"
   }
 }

@@ -1,8 +1,11 @@
+import { useTranslations } from "next-intl";
+
 export default function ManageSubscription() {
+    const t = useTranslations("manageSubscription");
     return (
         <div className="product-page">
-            <h1>Manage Subscription Page</h1>
-            <p>This is the Manage Subscription page.</p>
+            <h1>{t('title')}</h1>
+            <p>{t('description')}</p>
         </div>
     )
 }

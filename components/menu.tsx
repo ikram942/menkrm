@@ -3,24 +3,26 @@ import Link from "next/link";
 import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { MenuIcon } from "lucide-react";
-import { useLocale } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 
 export function Menu() {
     const locale = useLocale();
+    const t = useTranslations("navigation");
+    const c = useTranslations("common");
     const navLinks = [
-        { name: 'Home', href: '/' },
-        { name: 'Products', href: '/product' },
-        { name: 'Tutorials', href: '/tutorials' },
-        { name: 'Manage Subscription', href: '/manage-subscription' },
-        { name: 'Contact Us', href: '/contact-us' },
+        { name: t('home'), href: '/' },
+        { name: t('product'), href: '/product' },
+        { name: t('tutorials'), href: '/tutorials' },
+        { name: t('manageSubscription'), href: '/manage-subscription' },
+        { name: t('contactUs'), href: '/contact-us' },
     ];
 
     return (<Sheet>
         <SheetTrigger className="menu"><MenuIcon /></SheetTrigger>
-        <SheetContent side="left" className="bg-mauve-100">
+        <SheetContent side={locale === 'ar' ? 'right' : 'left'} className="bg-mauve-100">
 
             <SheetHeader>
-                <SheetTitle>Menu</SheetTitle>
+                <SheetTitle>{c('menu')}</SheetTitle>
             </SheetHeader>
             {/* Links */}
             <nav className="flex flex-col">
@@ -38,16 +40,16 @@ export function Menu() {
             {/* Country */}
             <Select>
                 <SelectTrigger>
-                    <SelectValue placeholder="Contry" />
+                    <SelectValue placeholder={c('country')} />
                 </SelectTrigger>
                 <SelectContent>
                     <SelectGroup>
-                        <SelectItem value="🇲🇦 Morocco (MAD)">🇲🇦 Morocco (MAD)</SelectItem>
-                        <SelectItem value="🇫🇷 France (EUR)">🇫🇷 France (EUR)</SelectItem>
-                        <SelectItem value="🇺🇸 USA (USD)">🇺🇸 USA (USD)</SelectItem>
-                        <SelectItem value="🇪🇸 Spain (EUR)"> 🇪🇸 Spain (EUR)</SelectItem>
-                        <SelectItem value="🇦🇪 UAE (AED)">🇦🇪 UAE (AED)</SelectItem>
-                        <SelectItem value="🇨🇦 Canada (CAD)">🇨🇦 Canada (CAD)</SelectItem>
+                        <SelectItem value="🇲🇦 Morocco (MAD)">{c('countryMA')}</SelectItem>
+                        <SelectItem value="🇫🇷 France (EUR)">{c('countryFR')}</SelectItem>
+                        <SelectItem value="🇺🇸 USA (USD)">{c('countryUS')}</SelectItem>
+                        <SelectItem value="🇪🇸 Spain (EUR)">{c('countryES')}</SelectItem>
+                        <SelectItem value="🇦🇪 UAE (AED)">{c('countryAE')}</SelectItem>
+                        <SelectItem value="🇨🇦 Canada (CAD)">{c('countryCA')}</SelectItem>
                     </SelectGroup>
                 </SelectContent>
             </Select>
@@ -55,7 +57,7 @@ export function Menu() {
             {/* Login */}
             <div className="login">
                 <i className="far fa-user"></i>
-                <span>Log in</span>
+                <span>{c('login')}</span>
             </div>
 
             {/* Socials */}
@@ -79,7 +81,7 @@ export function Menu() {
                 <footer>
                     <div className="scroll-container">
                         <p className="scroll-text">
-                            © 2026 MenSavil — Tous droits réservés • Produits cosmétiques premium
+                            {c('footer')}
                         </p>
                     </div>
                 </footer>

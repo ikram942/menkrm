@@ -13,7 +13,17 @@
     "error": "An error occurred",
     "success": "Success",
     "cancel": "Cancel",
-    "submit": "Submit"
+    "submit": "Submit",
+    "menu": "Menu",
+    "country": "Country",
+    "login": "Log in",
+    "footer": "© 2026 MenSavil — All rights reserved • Premium cosmetic products",
+    "countryMA": "🇲🇦 Morocco (MAD)",
+    "countryFR": "🇫🇷 France (EUR)",
+    "countryUS": "🇺🇸 USA (USD)",
+    "countryES": "🇪🇸 Spain (EUR)",
+    "countryAE": "🇦🇪 UAE (AED)",
+    "countryCA": "🇨🇦 Canada (CAD)"
   },
   "hero": {
     "title": "Welcome to Mensavil",
@@ -33,5 +43,22 @@
     "product3": "Conditioner",
     "product4": "Hair & Beard Oil",
     "pageIndicator": "Product {current} of {count}"
+  },
+  "product": {
+    "title": "Product Page",
+    "description": "This is the product page."
+  },
+  "tutorials": {
+    "title": "Tutorials Page",
+    "description": "This is the Tutorials page."
+  },
+  "manageSubscription": {
+    "title": "Manage Subscription Page",
+    "description": "This is the Manage Subscription page."
+  },
+  "contactUs": {
+    "title": "Contact Us",
+    "description": "We're here to help! Whether you have a question, feedback, or just want to say hello, we'd love to hear from you.",
+    "button": "Send Message"
   }
 }

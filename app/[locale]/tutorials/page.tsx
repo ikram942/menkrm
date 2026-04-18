@@ -1,8 +1,11 @@
+import { useTranslations } from "next-intl";
+
 export default function Tutorials() {
+    const t = useTranslations("tutorials");
     return (
         <div className="product-page">
-            <h1>Tutorials Page</h1>
-            <p>This is the Tutorials page.</p>
+            <h1>{t('title')}</h1>
+            <p>{t('description')}</p>
         </div>
     )
 }

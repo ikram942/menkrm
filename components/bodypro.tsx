@@ -17,22 +17,22 @@ const myProducts = [
     {
         id: 1,
         nameKey: "product1",
-        image: "pack.jpg",
+        image: "pack.webp",
     },
     {
         id: 2,
         nameKey: "product2",
-        image: "champo.png",
+        image: "champo.webp",
     },
     {
         id: 3,
         nameKey: "product3",
-        image: "apres-champo.png",
+        image: "apres-champo.webp",
     },
     {
         id: 4,
         nameKey: "product4",
-        image: "huile.png",
+        image: "huile.webp",
     },
 
 ]

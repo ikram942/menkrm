@@ -3,6 +3,7 @@
 import * as React from "react"
 import Autoplay from "embla-carousel-autoplay"
 import { Button } from "@/components/ui/button"
+import { useTranslations } from "next-intl"
 import {
   Carousel,
   CarouselContent,
@@ -10,30 +11,31 @@ import {
 } from "@/components/ui/carousel"
 
 export default function ContactHero() {
+  const t = useTranslations("contactUs")
   const plugin = React.useRef(
     Autoplay({ delay: 5000, stopOnInteraction: false })
   )
 
   const slides = [
     {
-      title: "Contact Us",
-      description: "We're here to help! Whether you have a question, feedback, or just want to say hello, we'd love to hear from you.",
-      buttonText: "Send Message",
-      image: "ks.jpeg", 
+      title: t('title'),
+      description: t('description'),
+      buttonText: t('button'),
+      image: "/ks.webp",
     },
   ]
 
   return (
     <Carousel
       plugins={[plugin.current]}
-      className="w-full h-screen min-h-150 md:h-200" 
+      className="w-full h-screen min-h-150 md:h-200"
       onMouseEnter={plugin.current.stop}
       onMouseLeave={plugin.current.reset}
     >
       <CarouselContent>
         {slides.map((slide, index) => (
           <CarouselItem key={index}>
-            <div 
+            <div
               className="relative w-full h-screen min-h-150 bg-cover bg-center flex items-center justify-center"
               style={{ backgroundImage: `url(${slide.image})` }}
             >
@@ -45,12 +47,12 @@ export default function ContactHero() {
                 <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight">
                   {slide.title}
                 </h1>
-                
+
                 <p className="text-lg md:text-xl font-medium mb-8 leading-relaxed">
                   {slide.description}
                 </p>
 
-                <Button 
+                <Button
                   className="bg-[#2d3e50] hover:bg-[#1a2530] text-white rounded-sm px-10 py-7 text-lg font-semibold transition-all border-none"
                 >
                   {slide.buttonText}
@@ -60,7 +62,7 @@ export default function ContactHero() {
               {/* Progress Indicators (Optional) */}
               <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex gap-2">
                 {slides.length > 1 && slides.map((_, i) => (
-                  <div 
+                  <div
                     key={i}
                     className={`h-1.5 w-12 transition-all rounded-full ${index === i ? "bg-white" : "bg-white/30"}`}
                   />

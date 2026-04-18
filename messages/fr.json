@@ -10,10 +10,20 @@
     "welcome": "Bienvenue",
     "language": "Langue",
     "loading": "Chargement...",
-    "error": "Une erreur est survenue",
+    "error": "Une erreur s'est produite",
     "success": "Succès",
     "cancel": "Annuler",
-    "submit": "Soumettre"
+    "submit": "Soumettre",
+    "menu": "Menu",
+    "country": "Pays",
+    "login": "Se connecter",
+    "footer": "© 2026 MenSavil — Tous droits réservés • Produits cosmétiques premium",
+    "countryMA": "🇲🇦 Maroc (MAD)",
+    "countryFR": "🇫🇷 France (EUR)",
+    "countryUS": "🇺🇸 États-Unis (USD)",
+    "countryES": "🇪🇸 Espagne (EUR)",
+    "countryAE": "🇦🇪 Émirats Arabes Unis (AED)",
+    "countryCA": "🇨🇦 Canada (CAD)"
   },
   "hero": {
     "title": "Bienvenue sur Mensavil",
@@ -27,11 +37,28 @@
     "button2": "PACKS"
   },
   "bodypro": {
-    "heading": "POUR LES HOMMES QUI NE FONT AUCUN COMPROMIS",
-    "product1": "Pack de soin capillaire",
+    "heading": "POUR LES HOMMES QUI NE FONT PAS DE COMPROMIS",
+    "product1": "Pack Soin Cheveux",
     "product2": "Shampoing",
     "product3": "Après-shampoing",
-    "product4": "Huile pour cheveux et barbe",
+    "product4": "Huile Cheveux & Barbe",
     "pageIndicator": "Produit {current} sur {count}"
+  },
+  "product": {
+    "title": "Page Produit",
+    "description": "Ceci est la page produit."
+  },
+  "tutorials": {
+    "title": "Page Tutoriels",
+    "description": "Ceci est la page des tutoriels."
+  },
+  "manageSubscription": {
+    "title": "Gérer l'Abonnement",
+    "description": "Ceci est la page de gestion des abonnements."
+  },
+  "contactUs": {
+    "title": "Nous Contacter",
+    "description": "Nous sommes là pour vous aider ! Que vous ayez une question, un commentaire, ou que vous vouliez simplement nous dire bonjour, nous serions ravis d'avoir de vos nouvelles.",
+    "button": "Envoyer le message"
   }
 }

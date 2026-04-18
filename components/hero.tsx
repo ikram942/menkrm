@@ -14,7 +14,7 @@ export default function Hero() {
   const t = useTranslations('hero');
   const locale = useLocale();
   const isRTL = locale === 'ar';
-  
+
   const plugin = useRef(
     Autoplay({ delay: 3000, stopOnInteraction: false })
   );
@@ -24,13 +24,13 @@ export default function Hero() {
       title: t('title1'),
       description: t('description1'),
       buttonText: t('button1'),
-      image: 'krm.jpeg',
+      image: 'krm.webp',
     },
     {
       title: t('title2'),
       description: t('description2'),
       buttonText: t('button2'),
-      image: 'body.jpeg',
+      image: 'body.webp',
     },
   ];
 
