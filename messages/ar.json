@@ -23,7 +23,7 @@
     "countryUS": "🇺🇸 الولايات المتحدة (USD)",
     "countryES": "🇪🇸 إسبانيا (EUR)",
     "countryAE": "🇦🇪 الإمارات (AED)",
-    "countryCA": "🇨🇦 كندا (CAD)"
+    "countryCA": "🇨🇦 Canada (CAD)"
   },
   "hero": {
     "title": "مرحبا بك في Mensavil",
@@ -45,8 +45,30 @@
     "pageIndicator": "المنتج {current} من {count}"
   },
   "product": {
-    "title": "صفحة المنتج",
-    "description": "هذه هي صفحة المنتج."
+    "title": "الأكثر مبيعاً",
+    "nosProduits": "منتجاتنا",
+    "viewAll": "عرض الكل",
+    "guarantee": "ضمان استرداد الأموال بنسبة 100%، إذا لم تجعلك منتجاتنا تبدو أفضل!",
+    "count": "22 منتجاً",
+    "sortBy": "ترتيب حسب",
+    "product1Title": "KS كريم الشعر",
+    "product1Price": "70 درهم",
+    "product1Desc": "تثبيت قوي ومظهر طبيعي",
+    "product2Title": "KS شامبو مقوي",
+    "product2Price": "100 درهم",
+    "product2Desc": "قوة وحيوية لشعرك",
+    "product3Title": "KS جل تصفيف",
+    "product3Price": "85 درهم",
+    "product3Desc": "تثبيت فائق القوة ولمعان",
+    "product4Title": "KS بخاخ شعر",
+    "product4Price": "95 درهم",
+    "product4Desc": "مظهر مرن وثبات يدوم طويلاً",
+    "product5Title": "KS طقم البلسم",
+    "product5Price": "150 درهم",
+    "product5Desc": "عناية كاملة وتغذية عميقة",
+    "product6Title": "KS زيت الشعر واللحية",
+    "product6Price": "120 درهم",
+    "product6Desc": "ترطيب ولمعان مكثف"
   },
   "tutorials": {
     "title": "صفحة البرامج التعليمية",

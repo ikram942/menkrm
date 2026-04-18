@@ -45,8 +45,30 @@
     "pageIndicator": "Product {current} of {count}"
   },
   "product": {
-    "title": "Product Page",
-    "description": "This is the product page."
+    "title": "Best Sellers",
+    "nosProduits": "OUR PRODUCTS",
+    "viewAll": "VIEW ALL",
+    "guarantee": "100% Money Back Guarantee, if our products do not make you look better!",
+    "count": "22 products",
+    "sortBy": "SORT BY",
+    "product1Title": "KS Hair Cream",
+    "product1Price": "70 dh",
+    "product1Desc": "Fixation Forte & Fini Naturel",
+    "product2Title": "KS Shampoing Fortifiant",
+    "product2Price": "100 dh",
+    "product2Desc": "Force & Vitalité pour vos cheveux",
+    "product3Title": "KS Styling Gel",
+    "product3Price": "85 dh",
+    "product3Desc": "Fixation Ultra Forte & Brillance",
+    "product4Title": "KS Hair Spray",
+    "product4Price": "95 dh",
+    "product4Desc": "Fini Flexible & Tenue Longue Durée",
+    "product5Title": "KS Conditioning Pack",
+    "product5Price": "150 dh",
+    "product5Desc": "Soin complet et nutrition profonde",
+    "product6Title": "KS Hair & Beard Oil",
+    "product6Price": "120 dh",
+    "product6Desc": "Hydratation et brillance intense"
   },
   "tutorials": {
     "title": "Tutorials Page",
