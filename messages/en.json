@@ -4,7 +4,8 @@
     "product": "Product",
     "tutorials": "Tutorials",
     "contactUs": "Contact Us",
-    "manageSubscription": "Manage Subscription"
+    "manageSubscription": "Manage Subscription",
+    "gifting": "Gifting"
   },
   "common": {
     "welcome": "Welcome",
@@ -75,8 +76,15 @@
     "description": "This is the Tutorials page."
   },
   "manageSubscription": {
-    "title": "Manage Subscription Page",
-    "description": "This is the Manage Subscription page."
+    "title": "Sign in",
+    "description": "Sign in or create an account",
+    "google": "Continue with Google",
+    "email": "Email",
+    "continue": "Continue",
+    "privacy": "Privacy policy",
+    "terms": "Terms of service",
+    "newsletter": "Email me with news and offers",
+    "or": "or"
   },
   "contactUs": {
     "title": "Contact Us",

@@ -4,7 +4,8 @@
     "product": "Produit",
     "tutorials": "Tutoriels",
     "contactUs": "Nous contacter",
-    "manageSubscription": "Gérer l'abonnement"
+    "manageSubscription": "Gérer l'abonnement",
+    "gifting": "Cadeaux"
   },
   "common": {
     "welcome": "Bienvenue",
@@ -75,8 +76,15 @@
     "description": "Ceci est la page des tutoriels."
   },
   "manageSubscription": {
-    "title": "Gérer l'Abonnement",
-    "description": "Ceci est la page de gestion des abonnements."
+    "title": "Se connecter",
+    "description": "Connectez-vous ou créez un compte",
+    "google": "Continuer avec Google",
+    "email": "E-mail",
+    "continue": "Continuer",
+    "privacy": "Politique de confidentialité",
+    "terms": "Conditions d'utilisation",
+    "newsletter": "M'envoyer des nouvelles et des offres par e-mail",
+    "or": "ou"
   },
   "contactUs": {
     "title": "Nous Contacter",

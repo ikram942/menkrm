@@ -4,7 +4,8 @@
     "product": "المنتج",
     "tutorials": "البرامج التعليمية",
     "contactUs": "اتصل بنا",
-    "manageSubscription": "إدارة الاشتراك"
+    "manageSubscription": "إدارة الاشتراك",
+    "gifting": "الهدايا"
   },
   "common": {
     "welcome": "أهلا وسهلا",
@@ -75,8 +76,15 @@
     "description": "هذه هي صفحة البرامج التعليمية."
   },
   "manageSubscription": {
-    "title": "صفحة إدارة الاشتراك",
-    "description": "هذه هي صفحة إدارة الاشتراك."
+    "title": "تسجيل الدخول",
+    "description": "قم بتسجيل الدخول أو إنشاء حساب",
+    "google": "المتابعة باستخدام Google",
+    "email": "البريد الإلكتروني",
+    "continue": "متابعة",
+    "privacy": "سياسة الخصوصية",
+    "terms": "شروط الخدمة",
+    "newsletter": "أرسل لي الأخبار والعروض عبر البريد الإلكتروني",
+    "or": "أو"
   },
   "contactUs": {
     "title": "اتصل بنا",
