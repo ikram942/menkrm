@@ -6,16 +6,18 @@ import { MenuIcon } from "lucide-react";
 import { useTranslations, useLocale } from "next-intl";
 import { FaFacebookF, FaInstagram, FaWhatsapp, FaTiktok, FaUser } from "react-icons/fa";
 
+import { useCurrency } from "@/components/CurrencyContext";
+
 export function Menu() {
     const locale = useLocale();
     const t = useTranslations("navigation");
     const c = useTranslations("common");
+    const { currency, setCurrency } = useCurrency();
     const navLinks = [
         { name: t('home'), href: '/' },
         { name: t('product'), href: '/product' },
         { name: t('tutorials'), href: '/tutorials' },
         { name: t('manageSubscription'), href: '/manage-subscription' },
-        { name: t('gifting'), href: '/gifting' },
         { name: t('contactUs'), href: '/contact-us' },
     ];
 
@@ -46,18 +48,17 @@ export function Menu() {
                         </nav>
                         {/* Country */}
                         <div className="mt-4">
-                            <Select>
+                            <Select value={currency} onValueChange={(val: any) => setCurrency(val)}>
                                 <SelectTrigger>
                                     <SelectValue placeholder={c('country')} />
                                 </SelectTrigger>
                                 <SelectContent>
                                     <SelectGroup>
-                                        <SelectItem value="🇲🇦 Morocco (MAD)">{c('countryMA')}</SelectItem>
-                                        <SelectItem value="🇫🇷 France (EUR)">{c('countryFR')}</SelectItem>
-                                        <SelectItem value="🇺🇸 USA (USD)">{c('countryUS')}</SelectItem>
-                                        <SelectItem value="🇪🇸 Spain (EUR)">{c('countryES')}</SelectItem>
-                                        <SelectItem value="🇦🇪 UAE (AED)">{c('countryAE')}</SelectItem>
-                                        <SelectItem value="🇨🇦 Canada (CAD)">{c('countryCA')}</SelectItem>
+                                        <SelectItem value="MAD">{c('countryMA')}</SelectItem>
+                                        <SelectItem value="EUR">{c('countryFR')}</SelectItem>
+                                        <SelectItem value="USD">{c('countryUS')}</SelectItem>
+                                        <SelectItem value="AED">{c('countryAE')}</SelectItem>
+                                        <SelectItem value="CAD">{c('countryCA')}</SelectItem>
                                     </SelectGroup>
                                 </SelectContent>
                             </Select>

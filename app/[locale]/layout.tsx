@@ -5,6 +5,8 @@ import { getMessages } from 'next-intl/server';
 import "../globals.css";
 import { Header } from "@/components/header";
 
+import { CurrencyProvider } from "@/components/CurrencyContext";
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -40,10 +42,12 @@ export default async function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <NextIntlClientProvider messages={messages} locale={locale}>
-          <Header />
-          {children}
-        </NextIntlClientProvider>
+        <CurrencyProvider>
+          <NextIntlClientProvider messages={messages} locale={locale}>
+            <Header />
+            {children}
+          </NextIntlClientProvider>
+        </CurrencyProvider>
       </body>
     </html>
   );

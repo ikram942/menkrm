@@ -3,50 +3,52 @@
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { Link } from "@/i18n/routing";
+import { useCurrency } from "@/components/CurrencyContext";
 
 export default function Prod() {
     const t = useTranslations("product");
+    const { currency } = useCurrency();
 
     const products = [
         {
             id: 1,
             title: t('product1Title'),
-            price: t('product1Price'),
+            price: t(`product1Price_${currency}`),
             description: t('product1Desc'),
             image: "/creme.webp"
         },
         {
             id: 2,
             title: t('product2Title'),
-            price: t('product2Price'),
+            price: t(`product2Price_${currency}`),
             description: t('product2Desc'),
             image: "/champo.webp"
         },
         {
             id: 3,
             title: t('product3Title'),
-            price: t('product3Price'),
+            price: t(`product3Price_${currency}`),
             description: t('product3Desc'),
             image: "/gel.webp"
         },
         {
             id: 4,
             title: t('product4Title'),
-            price: t('product4Price'),
+            price: t(`product4Price_${currency}`),
             description: t('product4Desc'),
             image: "/spryt.webp"
         },
         {
             id: 5,
             title: t('product5Title'),
-            price: t('product5Price'),
+            price: t(`product5Price_${currency}`),
             description: t('product5Desc'),
             image: "/apres-champo.webp"
         },
         {
             id: 6,
             title: t('product6Title'),
-            price: t('product6Price'),
+            price: t(`product6Price_${currency}`),
             description: t('product6Desc'),
             image: "/huile.webp"
         }
@@ -76,7 +78,7 @@ export default function Prod() {
                                     className="object-contain transition-transform duration-700 group-hover:scale-110"
                                 />
                             </div>
-                            
+
                             {/* Product Info */}
                             <div className="text-center px-2 md:px-4 space-y-1 md:space-y-2">
                                 <h3 className="text-sm md:text-xl font-bold text-gray-900 tracking-tight leading-tight line-clamp-2">
@@ -92,10 +94,10 @@ export default function Prod() {
                         </Link>
                     ))}
                 </div>
-                
+
                 {/* View All Button */}
                 <div className="mt-24 text-center">
-                    <Link 
+                    <Link
                         href="/product"
                         className="inline-block px-12 py-4 bg-black text-white rounded-full font-bold text-[11px] uppercase tracking-[0.2em] transition-all duration-300 hover:bg-[#222] hover:shadow-2xl hover:-translate-y-1 active:scale-95"
                     >

@@ -1,46 +1,50 @@
+"use client";
+
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import Copyright from "@/components/ui/copyrght";
+import { useCurrency } from "@/components/CurrencyContext";
 
 export default function Product() {
     const t = useTranslations("product");
+    const { currency } = useCurrency();
 
     const products = [
         {
             id: 1,
             title: t('product1Title'),
-            price: t('product1Price'),
+            price: t(`product1Price_${currency}`),
             image: "/creme.webp"
         },
         {
             id: 2,
             title: t('product2Title'),
-            price: t('product2Price'),
+            price: t(`product2Price_${currency}`),
             image: "/champo.webp"
         },
         {
             id: 3,
             title: t('product3Title'),
-            price: t('product3Price'),
+            price: t(`product3Price_${currency}`),
             image: "/gel.webp"
         },
         {
             id: 4,
             title: t('product4Title'),
-            price: t('product4Price'),
+            price: t(`product4Price_${currency}`),
             image: "/spryt.webp"
         },
         {
             id: 5,
-            title: t('product1Title'),
-            price: t('product1Price'),
+            title: t('product5Title'),
+            price: t(`product5Price_${currency}`),
             image: "/creme.webp"
         },
         {
             id: 6,
-            title: t('product2Title'),
-            price: t('product2Price'),
+            title: t('product6Title'),
+            price: t(`product6Price_${currency}`),
             image: "/champo.webp"
         }
     ];

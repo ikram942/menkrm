@@ -9,10 +9,13 @@ import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectVa
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 
+import { useCurrency } from "@/components/CurrencyContext";
+
 export function Header() {
     const [searchOpen, setSearchOpen] = useState(false);
     const toggleSearch = () => setSearchOpen((isSeachOpen) => !isSeachOpen);
     const c = useTranslations("common");
+    const { currency, setCurrency } = useCurrency();
 
     return (
         <header className="bg-white border-b border-gray-100">
@@ -42,18 +45,17 @@ export function Header() {
                 <div className="flex justify-between items-center mb-4">
                     {/* Country Selector */}
                     <div className="flex-1">
-                        <Select>
+                        <Select value={currency} onValueChange={(val: any) => setCurrency(val)}>
                             <SelectTrigger className="w-[180px] border-none bg-transparent shadow-none hover:bg-mauve-200">
                                 <SelectValue placeholder={c('country')} />
                             </SelectTrigger>
                             <SelectContent>
                                 <SelectGroup>
-                                    <SelectItem value="🇲🇦 Morocco (MAD)">{c('countryMA')}</SelectItem>
-                                    <SelectItem value="🇫🇷 France (EUR)">{c('countryFR')}</SelectItem>
-                                    <SelectItem value="🇺🇸 USA (USD)">{c('countryUS')}</SelectItem>
-                                    <SelectItem value="🇪🇸 Spain (EUR)">{c('countryES')}</SelectItem>
-                                    <SelectItem value="🇦🇪 UAE (AED)">{c('countryAE')}</SelectItem>
-                                    <SelectItem value="🇨🇦 Canada (CAD)">{c('countryCA')}</SelectItem>
+                                    <SelectItem value="MAD">{c('countryMA')}</SelectItem>
+                                    <SelectItem value="EUR">{c('countryFR')}</SelectItem>
+                                    <SelectItem value="USD">{c('countryUS')}</SelectItem>
+                                    <SelectItem value="AED">{c('countryAE')}</SelectItem>
+                                    <SelectItem value="CAD">{c('countryCA')}</SelectItem>
                                 </SelectGroup>
                             </SelectContent>
                         </Select>
