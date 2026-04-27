@@ -11,7 +11,7 @@ export default function Tutorials() {
             <div className="relative w-full h-[60vh] md:h-[80vh] overflow-hidden">
                 {/* Hero Image */}
                 <Image
-                    src="/spray2.jpeg"
+                    src="/kr.jpeg"
                     alt="Hair Tutorials"
                     fill
                     className="object-cover"

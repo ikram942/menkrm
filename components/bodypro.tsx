@@ -17,7 +17,7 @@ const myProducts = [
     {
         id: 1,
         nameKey: "product1",
-        image: "/pack.webp",
+        image: "/pack1.jpeg",
     },
     {
         id: 2,
@@ -79,7 +79,7 @@ export default function CarouselDApiDemo() {
                                                     className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
                                                 />
                                             </div>
-                                            
+
                                             {/* Titre du produit en bas */}
                                             <div className="mt-6 text-center">
                                                 <h3 className="font-black text-xl md:text-2xl uppercase tracking-tighter">{t(product.nameKey)}</h3>
