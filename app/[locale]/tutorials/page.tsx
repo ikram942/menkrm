@@ -18,23 +18,30 @@ export default function Tutorials() {
                     priority
                 />
 
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-black/40" />
+                {/* Overlay: Cinematic gradient for a more premium feel */}
+                <div className="absolute inset-0 bg-linear-to-b from-black/60 via-black/20 to-black/60" />
 
                 {/* Content Overlay */}
-                <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white p-4">
-                    <h1 className="text-4xl md:text-8xl lg:text-9xl font-black mb-4 md:mb-6 tracking-tighter uppercase leading-none drop-shadow-2xl">
+                <div className="absolute inset-0 flex flex-col items-start justify-center text-left text-white p-8 md:p-24 lg:p-32 animate-in fade-in slide-in-from-left-8 duration-1000 ease-out">
+                    <h1 className="text-xl md:text-3xl lg:text-5xl font-extralight mb-6 md:mb-8 tracking-[0.25em] uppercase leading-tight drop-shadow-sm max-w-4xl">
                         {t('title')}
                     </h1>
-                    <p className="text-sm md:text-2xl font-bold mb-8 md:mb-12 max-w-2xl drop-shadow-lg opacity-90 uppercase tracking-widest">
+
+                    <div className="w-12 md:w-20 h-px bg-white/30 mb-8 md:mb-12" />
+
+                    <p className="text-[10px] md:text-sm font-light mb-12 md:mb-16 max-w-xl drop-shadow-sm opacity-80 uppercase tracking-[0.4em] leading-relaxed">
                         {t('subtitle') || "Style your hair like never before!"}
                     </p>
 
                     <Link
                         href="/product"
-                        className="px-8 md:px-16 py-3 md:py-5 bg-white text-black font-black text-[10px] md:text-sm uppercase tracking-[0.3em] transition-all duration-300 hover:bg-black hover:text-white hover:scale-105 active:scale-95 shadow-2xl"
+                        className="group relative px-10 md:px-16 py-4 md:py-5 overflow-hidden"
                     >
-                        {t('allProducts') || "ALL PRODUCTS"}
+                        <span className="relative z-10 text-[9px] md:text-xs font-light uppercase tracking-[0.4em] transition-colors duration-500 group-hover:text-black">
+                            {t('allProducts') || "ALL PRODUCTS"}
+                        </span>
+                        <div className="absolute inset-0 border border-white/40 transition-all duration-500 group-hover:border-white" />
+                        <div className="absolute inset-0 bg-white translate-y-full transition-transform duration-500 ease-out group-hover:translate-y-0" />
                     </Link>
                 </div>
             </div>

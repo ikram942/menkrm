@@ -3,6 +3,7 @@
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Link } from "@/i18n/routing";
 import Copyright from "@/components/ui/copyrght";
 import { useCurrency } from "@/components/CurrencyContext";
 
@@ -65,7 +66,7 @@ export default function Product() {
                 {/* Product Grid */}
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-10 md:gap-x-10 md:gap-y-20">
                     {products.map((product) => (
-                        <div key={product.id} className="group flex flex-col">
+                        <Link key={product.id} href={`/product/${product.id}`} className="group flex flex-col">
                             {/* Image Container */}
                             <div className="relative aspect-square w-full mb-4 md:mb-8 overflow-hidden rounded-[1.5rem] md:rounded-[2.5rem] bg-[#f8f8f8] border border-gray-50 flex items-center justify-center p-4 md:p-12 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 group-hover:bg-white">
                                 <Image
@@ -86,7 +87,7 @@ export default function Product() {
                                     {product.price}
                                 </p>
                             </div>
-                        </div>
+                        </Link>
                     ))}
                 </div>
             </div>

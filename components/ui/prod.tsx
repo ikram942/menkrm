@@ -67,7 +67,7 @@ export default function Prod() {
                 {/* Grid */}
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-10 md:gap-x-10 md:gap-y-20">
                     {products.map((product) => (
-                        <Link key={product.id} href="/product" className="group flex flex-col items-center">
+                        <Link key={product.id} href={`/product/${product.id}`} className="group flex flex-col items-center">
                             {/* Product Card / Image Container */}
                             <div className="relative aspect-square w-full mb-4 md:mb-8 overflow-hidden rounded-[1.5rem] md:rounded-[2.5rem] bg-[#f8f8f8] flex items-center justify-center p-4 md:p-12 transition-all duration-500 group-hover:bg-[#f3f3f3] group-hover:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)] group-hover:-translate-y-2">
                                 <Image
