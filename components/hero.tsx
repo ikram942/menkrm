@@ -24,13 +24,13 @@ export default function Hero() {
       title: t('title1'),
       description: t('description1'),
       buttonText: t('button1'),
-      image: '/krm.webp',
+      image: '/kr.jpeg',
     },
     {
       title: t('title2'),
       description: t('description2'),
       buttonText: t('button2'),
-      image: '/kr.jpeg',
+      image: '/body.webp',
     },
   ];
 
