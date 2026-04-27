@@ -16,37 +16,43 @@ export default function Product() {
             id: 1,
             title: t('product1Title'),
             price: t(`product1Price_${currency}`),
+            description: t('product1Desc'),
             image: "/creme.webp"
         },
         {
             id: 2,
             title: t('product2Title'),
             price: t(`product2Price_${currency}`),
+            description: t('product2Desc'),
             image: "/champo.webp"
         },
         {
             id: 3,
             title: t('product3Title'),
             price: t(`product3Price_${currency}`),
+            description: t('product3Desc'),
             image: "/gel.webp"
         },
         {
             id: 4,
             title: t('product4Title'),
             price: t(`product4Price_${currency}`),
+            description: t('product4Desc'),
             image: "/spryt.webp"
         },
         {
             id: 5,
             title: t('product5Title'),
             price: t(`product5Price_${currency}`),
-            image: "/creme.webp"
+            description: t('product5Desc'),
+            image: "/apres-champo.webp"
         },
         {
             id: 6,
             title: t('product6Title'),
             price: t(`product6Price_${currency}`),
-            image: "/champo.webp"
+            description: t('product6Desc'),
+            image: "/huile.webp"
         }
     ];
 
@@ -83,6 +89,9 @@ export default function Product() {
                                 <h3 className="text-[12px] md:text-lg lg:text-xl font-bold text-gray-900 tracking-tight leading-tight line-clamp-2 min-h-[2em] md:min-h-0">
                                     {product.title}
                                 </h3>
+                                <p className="text-gray-400 text-[10px] md:text-sm font-medium line-clamp-1">
+                                    {product.description}
+                                </p>
                                 <p className="text-[16px] md:text-2xl font-black text-black tracking-tighter">
                                     {product.price}
                                 </p>
