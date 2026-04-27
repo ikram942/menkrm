@@ -30,7 +30,7 @@ export default function Hero() {
       title: t('title2'),
       description: t('description2'),
       buttonText: t('button2'),
-      image: '/body.webp',
+      image: '/kr.jpeg',
     },
   ];
 
