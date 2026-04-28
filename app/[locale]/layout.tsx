@@ -6,6 +6,7 @@ import "../globals.css";
 import { Header } from "@/components/header";
 
 import { CurrencyProvider } from "@/components/CurrencyContext";
+import SessionProvider from "@/components/SessionProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -42,12 +43,14 @@ export default async function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <CurrencyProvider>
-          <NextIntlClientProvider messages={messages} locale={locale}>
-            <Header />
-            {children}
-          </NextIntlClientProvider>
-        </CurrencyProvider>
+    <SessionProvider>
+      <CurrencyProvider>
+        <NextIntlClientProvider messages={messages} locale={locale}>
+          <Header />
+          {children}
+        </NextIntlClientProvider>
+      </CurrencyProvider>
+    </SessionProvider>
       </body>
     </html>
   );

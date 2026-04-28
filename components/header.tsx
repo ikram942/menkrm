@@ -1,17 +1,17 @@
 "use client"
-import { SearchIcon, ShoppingCartIcon } from "lucide-react";
+import { SearchIcon, ShoppingCartIcon, LogOut, User } from "lucide-react";
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { Menu } from "@/components/menu";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import { useState } from "react";
-import { FaUser } from "react-icons/fa";
 import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
-
+import { useSession, signOut } from "next-auth/react";
 import { useCurrency } from "@/components/CurrencyContext";
 
 export function Header() {
+    const { data: session } = useSession();
     const [searchOpen, setSearchOpen] = useState(false);
     const toggleSearch = () => setSearchOpen((isSeachOpen) => !isSeachOpen);
     const c = useTranslations("common");
@@ -25,6 +25,11 @@ export function Header() {
                 <h1 className="text-2xl">Mensavil</h1>
 
                 <div className="flex justify-center items-center gap-4">
+                    {session && (
+                        <button onClick={() => signOut()} className="text-gray-500 hover:text-black transition-colors" title="Sign Out">
+                            <LogOut className="w-5 h-5" />
+                        </button>
+                    )}
                     <LanguageSwitcher />
                     <SearchIcon onClick={toggleSearch} className="w-5 h-5 cursor-pointer" />
                     <Sheet>
@@ -69,6 +74,26 @@ export function Header() {
                     {/* Icons (Right) */}
                     <div className="flex-1 flex justify-end items-center gap-6">
                         <LanguageSwitcher />
+                        {session && (
+                            <div className="flex items-center gap-3 bg-gray-50 px-3 py-1.5 rounded-full border border-gray-100 group">
+                                <div className="w-8 h-8 bg-black rounded-full flex items-center justify-center text-white text-xs font-bold ring-2 ring-transparent group-hover:ring-gray-200 transition-all">
+                                    {session.user?.email?.[0].toUpperCase()}
+                                </div>
+                                <div className="flex flex-col">
+                                    <span className="text-[10px] font-black uppercase tracking-wider text-gray-400 leading-none mb-0.5">Account</span>
+                                    <span className="text-xs font-bold text-gray-900 hidden lg:block leading-none">
+                                        {session.user?.email?.split('@')[0]}
+                                    </span>
+                                </div>
+                                <button
+                                    onClick={() => signOut()}
+                                    className="ml-1 p-1.5 hover:bg-white hover:shadow-sm rounded-full transition-all text-gray-400 hover:text-black"
+                                    title="Sign Out"
+                                >
+                                    <LogOut size={14} />
+                                </button>
+                            </div>
+                        )}
                         <SearchIcon onClick={toggleSearch} className="w-5 h-5 cursor-pointer hover:scale-110 transition-transform" />
                         <Sheet>
                             <SheetTrigger><ShoppingCartIcon className="w-5 h-5 hover:scale-110 transition-transform" /></SheetTrigger>
