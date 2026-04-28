@@ -1,10 +1,17 @@
-"use client";
-
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/routing";
+import { SignInForm } from "@/components/sign-in-form";
+import { auth } from "@/auth";
+import { redirect } from "next/navigation";
 
-export default function ManageSubscription() {
-    const t = useTranslations("manageSubscription");
+export default async function ManageSubscription() {
+    const session = await auth();
+
+    if (session) {
+        redirect("/");
+    }
+
+    const t = await getTranslations("manageSubscription");
 
     return (
         <div className="min-h-screen bg-[#f4f4f4] flex flex-col items-center justify-center p-4">
@@ -48,23 +55,7 @@ export default function ManageSubscription() {
                 </div>
 
                 {/* Email Form */}
-                <div className="space-y-4">
-                    <div className="relative">
-                        <input
-                            type="email"
-                            placeholder={t('email')}
-                            className="w-full px-4 py-4 bg-white border-2 border-gray-900 rounded-xl outline-none font-medium text-gray-900 placeholder:text-gray-400 focus:ring-4 focus:ring-gray-100 transition-all"
-                        />
-                    </div>
-
-                    {/* Continue Button with Luxe Animation */}
-                    <button className="group relative w-full overflow-hidden py-4 bg-black text-white rounded-xl font-black uppercase tracking-[0.2em] text-[10px] transition-all duration-500 hover:shadow-[0_0_30px_rgba(0,0,0,0.3)] hover:scale-[1.02] active:scale-[0.98]">
-                        {/* Shimmer effect */}
-                        <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out"></span>
-
-                        <span className="relative">{t('continue')}</span>
-                    </button>
-                </div>
+                <SignInForm />
 
                 {/* Checkbox */}
                 <div className="mt-6 flex items-start gap-3">
