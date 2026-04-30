@@ -1,5 +1,6 @@
 import { useTranslations } from "next-intl";
 import { Plus } from "lucide-react";
+import { Link } from "@/i18n/routing";
 
 export default function AdminProductsPage() {
     const t = useTranslations("admin");
@@ -10,10 +11,10 @@ export default function AdminProductsPage() {
                 <h1 className="text-3xl font-bold text-gray-900 dark:text-white">
                     {t("products")}
                 </h1>
-                <button className="bg-gray-900 hover:bg-gray-800 dark:bg-white dark:hover:bg-gray-100 text-white dark:text-gray-900 px-4 py-2 flex items-center gap-2 rounded-lg font-medium transition-colors text-sm">
+                <Link href="/admin/products/new" className="bg-gray-900 hover:bg-gray-800 dark:bg-white dark:hover:bg-gray-100 text-white dark:text-gray-900 px-4 py-2 flex items-center gap-2 rounded-lg font-medium transition-colors text-sm">
                     <Plus className="w-4 h-4" />
                     Add Product
-                </button>
+                </Link>
             </div>
 
             <div className="bg-white dark:bg-slate-900 rounded-xl border border-gray-200 dark:border-slate-800 shadow-sm overflow-hidden">
