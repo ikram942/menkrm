@@ -37,3 +37,16 @@ export async function addProduct(formData: FormData) {
         return { success: false, error: error.message || "Failed to create product" };
     }
 }
+
+export async function deleteProduct(id: string) {
+    try {
+        await connectDB();
+        await Product.findByIdAndDelete(id);
+        revalidatePath("/admin/products");
+        return { success: true };
+    } catch (error: any) {
+        console.error("Error deleting product:", error);
+        return { success: false, error: error.message || "Failed to delete product" };
+    }
+}
+
