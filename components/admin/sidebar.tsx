@@ -1,16 +1,19 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/routing";
 import { LayoutDashboard, ShoppingBag, ShoppingCart, LogOut, Menu, X, ChevronLeft, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useState, useEffect } from "react";
+import LanguageSwitcher from "../LanguageSwitcher";
 
 export function AdminSidebar() {
     const t = useTranslations("admin");
     const pathname = usePathname();
     const [isOpen, setIsOpen] = useState(false); // Mobile state
     const [isCollapsed, setIsCollapsed] = useState(false); // Desktop state
+    const locale = useLocale();
+    const isRTL = locale === "ar";
 
     // Close mobile sidebar on route change
     useEffect(() => {
@@ -26,8 +29,8 @@ export function AdminSidebar() {
     return (
         <>
             {/* Mobile Header with Toggle */}
-            <div className="md:hidden fixed top-0 left-0 right-0 h-16 bg-white dark:bg-slate-900 border-b border-gray-200 dark:border-slate-800 flex items-center px-4 z-40 shadow-sm">
-                <button 
+            <div className="md:hidden fixed top-0 left-0 right-0 h-16 bg-white dark:bg-slate-900 border-b border-gray-200 dark:border-slate-800 flex items-center justify-between px-4 z-40 shadow-sm">
+                <button
                     onClick={() => setIsOpen(!isOpen)}
                     className="p-2 -ml-2 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-slate-800 rounded-lg transition-colors"
                 >
@@ -36,11 +39,13 @@ export function AdminSidebar() {
                 <h1 className="ml-4 text-lg font-bold text-gray-900 dark:text-white uppercase tracking-wider">
                     {t("title")}
                 </h1>
+
+                <LanguageSwitcher />
             </div>
 
             {/* Overlay for mobile */}
             {isOpen && (
-                <div 
+                <div
                     className="md:hidden fixed inset-0 bg-black/50 z-40 backdrop-blur-sm transition-opacity"
                     onClick={() => setIsOpen(false)}
                 />
@@ -55,11 +60,11 @@ export function AdminSidebar() {
                 isCollapsed ? "md:w-20" : "w-64"
             )}>
                 {/* Desktop Collapse Toggle */}
-                <button 
+                <button
                     onClick={() => setIsCollapsed(!isCollapsed)}
-                    className="hidden md:flex absolute -right-3 top-6 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-full p-1 shadow-sm text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white z-50"
+                    className={cn("hidden md:flex absolute top-6 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-full p-1 shadow-sm text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white z-50", isRTL ? "-left-3" : "-right-3")}
                 >
-                    {isCollapsed ? <ChevronRight className="w-4 h-4" /> : <ChevronLeft className="w-4 h-4" />}
+                    {(isCollapsed && !isRTL) || (!isCollapsed && isRTL) ? <ChevronRight className="w-4 h-4" /> : <ChevronLeft className="w-4 h-4" />}
                 </button>
 
                 <div className={cn(
@@ -76,20 +81,16 @@ export function AdminSidebar() {
                             {t("title").charAt(0)}
                         </h1>
                     )}
-                    <button 
-                        onClick={() => setIsOpen(false)}
-                        className="md:hidden p-2 -mr-2 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-slate-800 rounded-lg"
-                    >
-                        <X className="w-5 h-5" />
-                    </button>
+
+                    <LanguageSwitcher />
                 </div>
-                
+
                 <nav className="flex-1 py-6 flex flex-col gap-2 px-3 overflow-y-auto overflow-x-hidden">
                     {links.map((link) => {
-                        const isActive = link.exact 
+                        const isActive = link.exact
                             ? pathname === link.href || pathname === `/en${link.href}` || pathname === `/fr${link.href}` || pathname === `/ar${link.href}`
                             : pathname.includes(link.href);
-                            
+
                         return (
                             <Link
                                 key={link.href}
@@ -98,8 +99,8 @@ export function AdminSidebar() {
                                 className={cn(
                                     "flex items-center rounded-lg text-sm font-medium transition-all duration-200 group relative",
                                     isCollapsed ? "justify-center p-3" : "gap-3 px-3 py-3",
-                                    isActive 
-                                        ? "bg-mauve-100 text-mauve-900 dark:bg-mauve-900 dark:text-mauve-100" 
+                                    isActive
+                                        ? "bg-mauve-100 text-mauve-900 dark:bg-mauve-900 dark:text-mauve-100"
                                         : "text-gray-600 dark:text-slate-400 hover:bg-gray-100 dark:hover:bg-slate-800 hover:text-gray-900 dark:hover:text-white"
                                 )}
                             >
@@ -109,9 +110,9 @@ export function AdminSidebar() {
                         );
                     })}
                 </nav>
-                
+
                 <div className="p-3 border-t border-gray-200 dark:border-slate-800">
-                    <button 
+                    <button
                         title={isCollapsed ? t("logout") : undefined}
                         className={cn(
                             "flex items-center rounded-lg text-sm font-medium text-red-600 hover:bg-red-50 dark:hover:bg-red-950/30 transition-colors duration-200 w-full",
