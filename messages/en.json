@@ -137,5 +137,12 @@
     "title": "Contact Us",
     "description": "We're here to help! Whether you have a question, feedback, or just want to say hello, we'd love to hear from you.",
     "button": "Send Message"
+  },
+  "admin": {
+    "overview": "Overview",
+    "products": "Products",
+    "orders": "Orders",
+    "logout": "Logout",
+    "title": "Admin Panel"
   }
 }

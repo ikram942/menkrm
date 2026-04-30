@@ -137,5 +137,12 @@
     "title": "Nous Contacter",
     "description": "Nous sommes là pour vous aider ! Que vous ayez une question, un commentaire, ou que vous vouliez simplement nous dire bonjour, nous serions ravis d'avoir de vos nouvelles.",
     "button": "Envoyer le message"
+  },
+  "admin": {
+    "overview": "Aperçu",
+    "products": "Produits",
+    "orders": "Commandes",
+    "logout": "Déconnexion",
+    "title": "Panneau d'administration"
   }
 }
