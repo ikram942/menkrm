@@ -130,6 +130,17 @@ export default function AddProductPage() {
                             placeholder="List of ingredients..."
                         />
                     </div>
+
+                    <div className="space-y-2">
+                        <label className="text-sm font-medium text-gray-700 dark:text-gray-300">Usage Instructions *</label>
+                        <textarea
+                            name="usage"
+                            required
+                            rows={3}
+                            className="w-full px-4 py-2 border border-gray-200 dark:border-slate-700 rounded-lg bg-gray-50 dark:bg-slate-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-mauve-500"
+                            placeholder="How to use the product..."
+                        />
+                    </div>
                 </div>
 
                 <div className="bg-white dark:bg-slate-900 rounded-xl border border-gray-200 dark:border-slate-800 shadow-sm p-6 space-y-6">

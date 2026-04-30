@@ -79,9 +79,9 @@ export default function ProductDetailClient({ product, t, price }: ProductDetail
                             <Wand2 className="w-5 h-5" />
                             <h3 className="text-sm font-bold uppercase tracking-[0.2em]">{t('usageLabel') || "Conseils d'utilisation"}</h3>
                         </div>
-                        <p className="text-gray-600 leading-relaxed">
-                            {product.usage || "N/A"}
-                        </p>
+                        <div className="text-gray-600 leading-relaxed whitespace-pre-line">
+                            {product.usage}
+                        </div>
                     </div>
                 </div>
 

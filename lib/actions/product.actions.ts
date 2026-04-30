@@ -14,6 +14,7 @@ export async function addProduct(formData: FormData) {
         const price = Number(formData.get("price"));
         const stock = Number(formData.get("stock"));
         const category = formData.get("category") as string;
+        const usage = formData.get("usage") as string;
         
         // Handle images array
         const images = formData.getAll("images") as string[];
@@ -25,6 +26,7 @@ export async function addProduct(formData: FormData) {
             price,
             stock,
             category,
+            usage,
             images,
         });
 
