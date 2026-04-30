@@ -3,15 +3,16 @@
 import * as React from "react"
 import Image from "next/image"
 import { Droplets, Sparkles, Wand2 } from "lucide-react"
+import { useTranslations } from "next-intl";
 
 interface ProductDetailClientProps {
     product: any;
-    t: any;
     price: string;
 }
 
-export default function ProductDetailClient({ product, t, price }: ProductDetailClientProps) {
+export default function ProductDetailClient({ product, price }: ProductDetailClientProps) {
     const [activeImage, setActiveImage] = React.useState(product.images?.[0] || "")
+    const t = useTranslations("product");
 
     return (
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
