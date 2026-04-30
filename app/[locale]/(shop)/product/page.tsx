@@ -1,60 +1,12 @@
-"use client";
-
-import { useTranslations } from "next-intl";
 import Image from "next/image";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Link } from "@/i18n/routing";
 import Copyright from "@/components/ui/copyrght";
-import { useCurrency } from "@/components/CurrencyContext";
+import { getTranslations } from "next-intl/server";
 
-export default function Product() {
-    const t = useTranslations("product");
-    const { currency } = useCurrency();
 
-    const products = [
-        {
-            id: 1,
-            title: t('product1Title'),
-            price: t(`product1Price_${currency}`),
-            description: t('product1Desc'),
-            image: "/creme.webp"
-        },
-        {
-            id: 2,
-            title: t('product2Title'),
-            price: t(`product2Price_${currency}`),
-            description: t('product2Desc'),
-            image: "/champo.webp"
-        },
-        {
-            id: 3,
-            title: t('product3Title'),
-            price: t(`product3Price_${currency}`),
-            description: t('product3Desc'),
-            image: "/gel.webp"
-        },
-        {
-            id: 4,
-            title: t('product4Title'),
-            price: t(`product4Price_${currency}`),
-            description: t('product4Desc'),
-            image: "/spryt.webp"
-        },
-        {
-            id: 5,
-            title: t('product5Title'),
-            price: t(`product5Price_${currency}`),
-            description: t('product5Desc'),
-            image: "/apres-champo.webp"
-        },
-        {
-            id: 6,
-            title: t('product6Title'),
-            price: t(`product6Price_${currency}`),
-            description: t('product6Desc'),
-            image: "/huile.webp"
-        }
-    ];
+export default async function Product() {
+    const t = await getTranslations("product");
+    const products = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/products`).then((res) => res.json());
 
     return (
         <>
@@ -71,7 +23,7 @@ export default function Product() {
 
                 {/* Product Grid */}
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-10 md:gap-x-10 md:gap-y-20">
-                    {products.map((product) => (
+                    {products.map((product: any) => (
                         <Link key={product.id} href={`/product/${product.id}`} className="group flex flex-col">
                             {/* Image Container */}
                             <div className="relative aspect-square w-full mb-4 md:mb-8 overflow-hidden rounded-[1.5rem] md:rounded-[2.5rem] bg-[#f8f8f8] border border-gray-50 flex items-center justify-center p-4 md:p-12 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 group-hover:bg-white">

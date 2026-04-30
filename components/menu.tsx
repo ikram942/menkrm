@@ -1,12 +1,13 @@
 "use client"
-import Link from "next/link";
 import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { MenuIcon } from "lucide-react";
 import { useTranslations, useLocale } from "next-intl";
-import { FaFacebookF, FaInstagram, FaWhatsapp, FaTiktok, FaUser } from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaWhatsapp, FaTiktok } from "react-icons/fa";
 
 import { useCurrency } from "@/components/CurrencyContext";
+import { Link } from "@/i18n/routing";
+import { useState } from "react";
 
 export function Menu() {
     const locale = useLocale();
@@ -20,12 +21,13 @@ export function Menu() {
         { name: t('manageSubscription'), href: '/manage-subscription' },
         { name: t('contactUs'), href: '/contact-us' },
     ];
+    const [open, setOpen] = useState(false);
 
     return (
         <>
             {/* Mobile Menu (Drawer) */}
             <div className="md:hidden">
-                <Sheet>
+                <Sheet open={open} onOpenChange={setOpen}>
                     <SheetTrigger className="menu">
                         <MenuIcon />
                     </SheetTrigger>
@@ -37,9 +39,8 @@ export function Menu() {
                         <nav className="flex flex-col">
                             {
                                 navLinks.map((link) => {
-                                    const href = link.href === '/' ? `/${locale}` : `/${locale}${link.href}`;
                                     return (
-                                        <Link key={link.href} href={href} className="px-4 h-16 border-t-2 border-mauve-200 flex items-center hover:pl-8 duration-500 hover:bg-mauve-200 text-xl uppercase tracking-wider">
+                                        <Link key={link.href} href={link.href} onClick={() => setOpen(false)} className="px-4 h-16 border-t-2 border-mauve-200 flex items-center hover:pl-8 duration-500 hover:bg-mauve-200 text-xl uppercase tracking-wider">
                                             {link.name}
                                         </Link>
                                     );
@@ -94,11 +95,10 @@ export function Menu() {
             {/* Desktop Menu (Horizontal) */}
             <nav className="hidden md:flex items-center gap-10">
                 {navLinks.map((link) => {
-                    const href = link.href === '/' ? `/${locale}` : `/${locale}${link.href}`;
                     return (
                         <Link
                             key={link.href}
-                            href={href}
+                            href={link.href}
                             className="text-[12px] font-medium text-gray-800 hover:text-mauve-600 transition-colors duration-200 uppercase tracking-[0.2em]"
                         >
                             {link.name}

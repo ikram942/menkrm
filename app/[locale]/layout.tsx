@@ -3,7 +3,6 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import "../globals.css";
-import { Header } from "@/components/header";
 
 import { CurrencyProvider } from "@/components/CurrencyContext";
 import SessionProvider from "@/components/SessionProvider";
@@ -23,10 +22,6 @@ export const metadata: Metadata = {
   description: "Your platform for managing subscriptions",
 };
 
-export function generateStaticParams() {
-  return [{ locale: 'en' }, { locale: 'fr' }, { locale: 'ar' }];
-}
-
 export default async function RootLayout({
   children,
   params,
@@ -43,14 +38,13 @@ export default async function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-    <SessionProvider>
-      <CurrencyProvider>
-        <NextIntlClientProvider messages={messages} locale={locale}>
-          <Header />
-          {children}
-        </NextIntlClientProvider>
-      </CurrencyProvider>
-    </SessionProvider>
+        <SessionProvider>
+          <CurrencyProvider>
+            <NextIntlClientProvider messages={messages}>
+              {children}
+            </NextIntlClientProvider>
+          </CurrencyProvider>
+        </SessionProvider>
       </body>
     </html>
   );

@@ -2,7 +2,7 @@
 
 import { useRouter, usePathname } from '@/i18n/routing';
 import { useLocale } from 'next-intl';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { Select, SelectContent, SelectItem, SelectTrigger } from '@/components/ui/select';
 import { MdLanguage } from 'react-icons/md';
 
 export default function LanguageSwitcher() {
@@ -20,8 +20,6 @@ export default function LanguageSwitcher() {
     { code: 'fr', name: 'Français', flag: '🇫🇷' },
     { code: 'ar', name: 'العربية', flag: '🇸🇦' },
   ];
-
-  const current = languages.find((l) => l.code === locale);
 
   return (
     <Select value={locale} onValueChange={switchLanguage}>
