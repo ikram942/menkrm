@@ -45,7 +45,7 @@ export default function ProductDetail() {
         <div className="bg-white min-h-screen">
             {/* Navigation Header */}
             <div className="max-w-7xl mx-auto px-4 py-6">
-                <Link href="/product" className="inline-flex items-center text-sm font-medium text-gray-500 hover:text-black transition-colors group">
+                <Link href="/products" className="inline-flex items-center text-sm font-medium text-gray-500 hover:text-black transition-colors group">
                     <ChevronLeft className="w-4 h-4 mr-1 transition-transform group-hover:-translate-x-1" />
                     {t('viewAll')}
                 </Link>

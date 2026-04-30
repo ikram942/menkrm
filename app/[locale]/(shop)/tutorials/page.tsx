@@ -34,7 +34,7 @@ export default function Tutorials() {
                     </p>
 
                     <Link
-                        href="/product"
+                        href="/products"
                         className="group relative px-10 md:px-16 py-4 md:py-5 overflow-hidden"
                     >
                         <span className="relative z-10 text-[9px] md:text-xs font-light uppercase tracking-[0.4em] transition-colors duration-500 group-hover:text-black">

@@ -16,7 +16,7 @@ export function Menu() {
     const { currency, setCurrency } = useCurrency();
     const navLinks = [
         { name: t('home'), href: '/' },
-        { name: t('product'), href: '/product' },
+        { name: t('product'), href: '/products' },
         { name: t('tutorials'), href: '/tutorials' },
         { name: t('manageSubscription'), href: '/manage-subscription' },
         { name: t('contactUs'), href: '/contact-us' },
