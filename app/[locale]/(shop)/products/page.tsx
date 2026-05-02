@@ -5,7 +5,6 @@ import { ProductCard } from "@/components/products/product-card";
 
 export default async function ProductPage({ searchParams }: { searchParams: Promise<{ search?: string }> }) {
     const t = await getTranslations("product");
-    console.log("searchParams", searchParams)
     const { search } = await searchParams
     const products = await getProducts({ search })
 

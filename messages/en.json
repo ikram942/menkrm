@@ -163,6 +163,10 @@
     "confirm": "Confirm Order",
     "success": "Order placed successfully!",
     "error": "Error creating order",
-    "empty": "Your cart is empty"
+    "empty": "Your cart is empty",
+    "summary": "Order Summary",
+    "subtotal": "Subtotal",
+    "shipping": "Shipping",
+    "free": "Free"
   }
 }

@@ -163,6 +163,10 @@
     "confirm": "Confirmer la commande",
     "success": "Commande passée avec succès !",
     "error": "Erreur lors de la commande",
-    "empty": "Votre panier est vide"
+    "empty": "Votre panier est vide",
+    "summary": "Résumé de la commande",
+    "subtotal": "Sous-total",
+    "shipping": "Livraison",
+    "free": "Gratuit"
   }
 }

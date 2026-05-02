@@ -32,10 +32,13 @@ export function HeaderCurrencySelect() {
     )
 }
 
+import { useState } from "react";
+
 export function HeaderIcons() {
     const { data: session } = useSession();
     const { cart } = useCart();
     const t = useTranslations("product");
+    const [isOpen, setIsOpen] = useState(false);
 
     return (
         <>
@@ -51,8 +54,8 @@ export function HeaderIcons() {
 
             <Search />
 
-            <Sheet>
-                <SheetTrigger className="relative">
+            <Sheet open={isOpen} onOpenChange={setIsOpen}>
+                <SheetTrigger className="relative" onClick={() => setIsOpen(true)}>
                     <ShoppingCartIcon className="w-5 h-5 sm:hover:scale-110 sm:transition-transform sm:cursor-pointer" />
                     {cart.length > 0 && (
                         <span className="absolute -top-2 -right-2 bg-mauve-600 text-white text-[10px] font-bold w-4 h-4 flex items-center justify-center rounded-full animate-in zoom-in">
@@ -65,7 +68,7 @@ export function HeaderIcons() {
                         <SheetTitle className="text-2xl font-black uppercase tracking-tighter">{t('cartTitle')}</SheetTitle>
                     </SheetHeader>
                     <div className="flex-1 overflow-hidden">
-                        <CartPanel />
+                        <CartPanel onClose={() => setIsOpen(false)} />
                     </div>
                 </SheetContent>
             </Sheet>

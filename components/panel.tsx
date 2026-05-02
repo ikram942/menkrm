@@ -91,7 +91,7 @@ export const useCart = () => {
 
 import { Link } from "@/i18n/routing";
 
-export function CartPanel() {
+export function CartPanel({ onClose }: { onClose?: () => void }) {
     const { cart, removeFromCart, updateQuantity } = useCart();
     const t = useTranslations("product");
     const { currency } = useCurrency();
@@ -175,7 +175,7 @@ export function CartPanel() {
                     <span className="text-gray-500 font-bold uppercase tracking-widest text-xs">{t('total')}</span>
                     <span className="text-3xl font-black text-black tracking-tighter">{formatPrice(total)}</span>
                 </div>
-                <Link href="/checkout" className="block w-full">
+                <Link href="/checkout" className="block w-full" onClick={onClose}>
                     <button className="w-full bg-black text-white py-5 rounded-2xl font-black uppercase tracking-[0.2em] text-xs transition-all hover:bg-mauve-900 hover:shadow-xl active:scale-[0.98]">
                         {t('checkout')}
                     </button>
