@@ -3,9 +3,10 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import "../globals.css";
-
 import { CurrencyProvider } from "@/components/CurrencyContext";
 import SessionProvider from "@/components/SessionProvider";
+import { CartProvider } from "@/components/panel";
+import { Toaster } from "sonner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -41,7 +42,10 @@ export default async function RootLayout({
         <SessionProvider>
           <CurrencyProvider>
             <NextIntlClientProvider messages={messages}>
-              {children}
+              <CartProvider>
+                {children}
+                <Toaster position="top-right" richColors />
+              </CartProvider>
             </NextIntlClientProvider>
           </CurrencyProvider>
         </SessionProvider>

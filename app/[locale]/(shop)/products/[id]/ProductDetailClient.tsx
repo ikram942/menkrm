@@ -3,6 +3,7 @@
 import * as React from "react"
 import Image from "next/image"
 import { Droplets, Sparkles, Wand2 } from "lucide-react"
+import { useCart } from "@/components/panel";
 import { useTranslations } from "next-intl";
 
 interface ProductDetailClientProps {
@@ -13,6 +14,16 @@ interface ProductDetailClientProps {
 export default function ProductDetailClient({ product, price }: ProductDetailClientProps) {
     const [activeImage, setActiveImage] = React.useState(product.images?.[0] || "")
     const t = useTranslations("product");
+    const { addToCart } = useCart();
+
+    const handleAddToCart = () => {
+        addToCart({
+            _id: product._id,
+            title: product.title,
+            price: product.price,
+            image: product.images[0]
+        });
+    };
 
     return (
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
@@ -88,7 +99,10 @@ export default function ProductDetailClient({ product, price }: ProductDetailCli
 
                 {/* Call to Action */}
                 <div className="pt-8">
-                    <button className="w-full md:w-auto px-16 py-5 bg-black text-white font-bold text-xs uppercase tracking-[0.3em] transition-all duration-300 hover:bg-[#222] hover:shadow-2xl hover:-translate-y-1 active:scale-95">
+                    <button
+                        onClick={handleAddToCart}
+                        className="w-full md:w-auto px-16 py-5 bg-black text-white font-bold text-xs uppercase tracking-[0.3em] transition-all duration-300 hover:bg-[#222] hover:shadow-2xl hover:-translate-y-1 active:scale-95"
+                    >
                         {t('addToCart') || "Commander Maintenant"}
                     </button>
                 </div>

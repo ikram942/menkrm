@@ -1,7 +1,12 @@
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
+import connectDB from "@/lib/connect";
+import Order from "@/lib/models/order";
 
-export default function AdminOrdersPage() {
-    const t = useTranslations("admin");
+export default async function AdminOrdersPage() {
+    const t = await getTranslations("admin");
+
+    await connectDB();
+    const orders = await Order.find({}).sort({ createdAt: -1 }).lean();
 
     return (
         <div className="space-y-6">
@@ -23,42 +28,42 @@ export default function AdminOrdersPage() {
                             </tr>
                         </thead>
                         <tbody className="divide-y divide-gray-200 dark:divide-slate-800">
-                            <tr className="hover:bg-gray-50 dark:hover:bg-slate-800/50 transition-colors">
-                                <td className="px-6 py-4 text-gray-900 dark:text-white font-medium">#ORD-001</td>
-                                <td className="px-6 py-4 text-gray-700 dark:text-gray-300">John Doe</td>
-                                <td className="px-6 py-4 text-gray-500 dark:text-gray-400">Oct 24, 2026</td>
-                                <td className="px-6 py-4 text-gray-900 dark:text-white">150.00 MAD</td>
-                                <td className="px-6 py-4">
-                                    <span className="bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400 px-2 py-1 rounded-full text-xs font-medium">Processing</span>
-                                </td>
-                                <td className="px-6 py-4 text-right">
-                                    <button className="text-mauve-600 hover:text-mauve-700 dark:text-mauve-400 font-medium">View</button>
-                                </td>
-                            </tr>
-                            <tr className="hover:bg-gray-50 dark:hover:bg-slate-800/50 transition-colors">
-                                <td className="px-6 py-4 text-gray-900 dark:text-white font-medium">#ORD-002</td>
-                                <td className="px-6 py-4 text-gray-700 dark:text-gray-300">Jane Smith</td>
-                                <td className="px-6 py-4 text-gray-500 dark:text-gray-400">Oct 23, 2026</td>
-                                <td className="px-6 py-4 text-gray-900 dark:text-white">85.00 MAD</td>
-                                <td className="px-6 py-4">
-                                    <span className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400 px-2 py-1 rounded-full text-xs font-medium">Delivered</span>
-                                </td>
-                                <td className="px-6 py-4 text-right">
-                                    <button className="text-mauve-600 hover:text-mauve-700 dark:text-mauve-400 font-medium">View</button>
-                                </td>
-                            </tr>
-                            <tr className="hover:bg-gray-50 dark:hover:bg-slate-800/50 transition-colors">
-                                <td className="px-6 py-4 text-gray-900 dark:text-white font-medium">#ORD-003</td>
-                                <td className="px-6 py-4 text-gray-700 dark:text-gray-300">Michael Johnson</td>
-                                <td className="px-6 py-4 text-gray-500 dark:text-gray-400">Oct 21, 2026</td>
-                                <td className="px-6 py-4 text-gray-900 dark:text-white">220.00 MAD</td>
-                                <td className="px-6 py-4">
-                                    <span className="bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-400 px-2 py-1 rounded-full text-xs font-medium">Pending</span>
-                                </td>
-                                <td className="px-6 py-4 text-right">
-                                    <button className="text-mauve-600 hover:text-mauve-700 dark:text-mauve-400 font-medium">View</button>
-                                </td>
-                            </tr>
+                            {orders.length === 0 ? (
+                                <tr>
+                                    <td colSpan={6} className="px-6 py-10 text-center text-gray-500">
+                                        No orders found
+                                    </td>
+                                </tr>
+                            ) : (
+                                orders.map((order: any) => (
+                                    <tr key={order._id.toString()} className="hover:bg-gray-50 dark:hover:bg-slate-800/50 transition-colors">
+                                        <td className="px-6 py-4 text-gray-900 dark:text-white font-medium uppercase text-xs">
+                                            #{order._id.toString().slice(-6)}
+                                        </td>
+                                        <td className="px-6 py-4 text-gray-700 dark:text-gray-300">
+                                            <div className="font-bold">{order.customer.name}</div>
+                                            <div className="text-[10px] text-gray-400">{order.customer.phone}</div>
+                                        </td>
+                                        <td className="px-6 py-4 text-gray-500 dark:text-gray-400">
+                                            {new Date(order.createdAt).toLocaleDateString()}
+                                        </td>
+                                        <td className="px-6 py-4 text-gray-900 dark:text-white font-black">
+                                            {order.total} {order.currency}
+                                        </td>
+                                        <td className="px-6 py-4">
+                                            <span className={`px-2 py-1 rounded-full text-xs font-medium ${order.status === 'delivered' ? 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400' :
+                                                order.status === 'pending' ? 'bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-400' :
+                                                    'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400'
+                                                }`}>
+                                                {order.status}
+                                            </span>
+                                        </td>
+                                        <td className="px-6 py-4 text-right">
+                                            <button className="text-mauve-600 hover:text-mauve-700 dark:text-mauve-400 font-medium underline underline-offset-4">View</button>
+                                        </td>
+                                    </tr>
+                                ))
+                            )}
                         </tbody>
                     </table>
                 </div>

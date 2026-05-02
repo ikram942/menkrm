@@ -7,6 +7,7 @@ import Product from "@/lib/models/product";
 import ProductDetailClient from "./ProductDetailClient";
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
+import mongoose from "mongoose";
 
 interface Props {
     params: Promise<{ id: string; locale: string }>;
@@ -35,6 +36,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function ProductDetail({ params }: Props) {
     const { id } = await params;
     const t = await getTranslations("product");
+
+    if (!mongoose.Types.ObjectId.isValid(id)) notFound();
 
     await connectDB();
     const product = await Product.findById(id).lean();

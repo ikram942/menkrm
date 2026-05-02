@@ -114,7 +114,14 @@
     "product6Usage": "Apply a few drops to beard or hair ends daily.",
     "ingredientsLabel": "Ingredients",
     "usageLabel": "How to Use",
-    "addToCart": "Order Now"
+    "addToCart": "Order Now",
+    "cartTitle": "Your Cart",
+    "emptyCart": "Your cart is empty",
+    "total": "Total",
+    "checkout": "Checkout",
+    "remove": "Remove",
+    "quantity": "Quantity",
+    "addedToCart": "Product added to cart!"
   },
   "tutorials": {
     "title": "Tutorials Page",
@@ -144,5 +151,18 @@
     "orders": "Orders",
     "logout": "Logout",
     "title": "Admin Panel"
+  },
+  "checkout": {
+    "title": "Finalize Order",
+    "subtitle": "Please fill in your shipping information",
+    "name": "Full Name",
+    "email": "E-mail",
+    "phone": "Phone",
+    "city": "City",
+    "address": "Shipping Address",
+    "confirm": "Confirm Order",
+    "success": "Order placed successfully!",
+    "error": "Error creating order",
+    "empty": "Your cart is empty"
   }
 }

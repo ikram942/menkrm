@@ -114,7 +114,14 @@
     "product6Usage": "Appliquez quelques gouttes sur la barbe ou les pointes des cheveux quotidiennement.",
     "ingredientsLabel": "Composition",
     "usageLabel": "Conseils d'utilisation",
-    "addToCart": "Commander Maintenant"
+    "addToCart": "Commander Maintenant",
+    "cartTitle": "Votre Panier",
+    "emptyCart": "Votre panier est vide",
+    "total": "Total",
+    "checkout": "Passer à la caisse",
+    "remove": "Supprimer",
+    "quantity": "Quantité",
+    "addedToCart": "Produit ajouté au panier !"
   },
   "tutorials": {
     "title": "Page Tutoriels",
@@ -144,5 +151,18 @@
     "orders": "Commandes",
     "logout": "Déconnexion",
     "title": "Panneau d'administration"
+  },
+  "checkout": {
+    "title": "Finaliser la commande",
+    "subtitle": "Veuillez remplir vos informations de livraison",
+    "name": "Nom Complet",
+    "email": "E-mail",
+    "phone": "Téléphone",
+    "city": "Ville",
+    "address": "Adresse de livraison",
+    "confirm": "Confirmer la commande",
+    "success": "Commande passée avec succès !",
+    "error": "Erreur lors de la commande",
+    "empty": "Votre panier est vide"
   }
 }

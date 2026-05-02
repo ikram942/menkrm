@@ -8,6 +8,7 @@ import { useSession, signOut } from "next-auth/react";
 import { useCurrency } from "@/components/CurrencyContext";
 import { ConnectedUser } from "@/components/connected-user";
 import { Search } from "@/components/search";
+import { useCart, CartPanel } from "@/components/panel";
 
 export function HeaderCurrencySelect() {
     const c = useTranslations("common");
@@ -33,6 +34,8 @@ export function HeaderCurrencySelect() {
 
 export function HeaderIcons() {
     const { data: session } = useSession();
+    const { cart } = useCart();
+    const t = useTranslations("product");
 
     return (
         <>
@@ -49,12 +52,21 @@ export function HeaderIcons() {
             <Search />
 
             <Sheet>
-                <SheetTrigger><ShoppingCartIcon className="w-5 h-5 sm:hover:scale-110 sm:transition-transform sm:cursor-pointer" /></SheetTrigger>
-                <SheetContent>
-                    <SheetHeader>
-                        <SheetTitle className="text-2xl">Cart</SheetTitle>
+                <SheetTrigger className="relative">
+                    <ShoppingCartIcon className="w-5 h-5 sm:hover:scale-110 sm:transition-transform sm:cursor-pointer" />
+                    {cart.length > 0 && (
+                        <span className="absolute -top-2 -right-2 bg-mauve-600 text-white text-[10px] font-bold w-4 h-4 flex items-center justify-center rounded-full animate-in zoom-in">
+                            {cart.length}
+                        </span>
+                    )}
+                </SheetTrigger>
+                <SheetContent className="flex flex-col w-full sm:max-w-md">
+                    <SheetHeader className="border-b border-gray-100 pb-4">
+                        <SheetTitle className="text-2xl font-black uppercase tracking-tighter">{t('cartTitle')}</SheetTitle>
                     </SheetHeader>
-                    <SheetDescription className="text-xl">Your cart is empty</SheetDescription>
+                    <div className="flex-1 overflow-hidden">
+                        <CartPanel />
+                    </div>
                 </SheetContent>
             </Sheet>
         </>
