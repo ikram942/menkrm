@@ -10,7 +10,7 @@ export function Header() {
                 <h1 className="text-2xl font-serif">Mensavil</h1>
 
                 <div className="flex justify-center items-center gap-4">
-                    <HeaderIcons variant="mobile" />
+                    <HeaderIcons />
                 </div>
             </div>
 
@@ -30,7 +30,7 @@ export function Header() {
 
                     {/* Icons (Right) */}
                     <div className="flex-1 flex justify-end items-center gap-6">
-                        <HeaderIcons variant="desktop" />
+                        <HeaderIcons />
                     </div>
                 </div>
 

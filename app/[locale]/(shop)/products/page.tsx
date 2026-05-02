@@ -1,13 +1,13 @@
-import Image from "next/image";
-import { Link } from "@/i18n/routing";
 import Copyright from "@/components/ui/copyrght";
 import { getTranslations } from "next-intl/server";
 import { getProducts } from "@/lib/products";
 import { ProductCard } from "@/components/products/product-card";
 
-export default async function ProductPage() {
+export default async function ProductPage({ searchParams }: { searchParams: Promise<{ search?: string }> }) {
     const t = await getTranslations("product");
-    const products = await getProducts()
+    console.log("searchParams", searchParams)
+    const { search } = await searchParams
+    const products = await getProducts({ search })
 
     return (
         <div className="bg-white min-h-screen">

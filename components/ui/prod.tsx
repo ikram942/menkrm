@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Link } from "@/i18n/routing";
 import { getTranslations } from "next-intl/server";
 import { getProducts } from "@/lib/products";
@@ -6,7 +5,7 @@ import { ProductCard } from "../products/product-card";
 
 export default async function Prod() {
     const t = await getTranslations("product")
-    const products = await getProducts()
+    const products = await getProducts({})
 
     return (
         <section className="py-24 bg-white">

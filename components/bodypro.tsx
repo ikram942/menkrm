@@ -3,7 +3,6 @@
 
 import * as React from "react"
 import { useTranslations, useLocale } from "next-intl"
-import { Card, CardContent } from "@/components/ui/card"
 import {
     Carousel,
     CarouselContent,
