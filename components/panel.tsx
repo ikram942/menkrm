@@ -123,8 +123,8 @@ export function CartPanel({ onClose }: { onClose?: () => void }) {
     }
 
     return (
-        <div className="flex flex-col h-full">
-            <div className="flex-1 overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-gray-200">
+        <div className="flex flex-col h-full p-4">
+            <div className="flex-1 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-200">
                 <div className="space-y-6 py-6">
                     {cart.map((item) => (
                         <div key={item._id} className="flex gap-4 group">
@@ -172,7 +172,7 @@ export function CartPanel({ onClose }: { onClose?: () => void }) {
 
             <div className="border-t border-gray-100 pt-8 mt-4 space-y-6">
                 <div className="flex items-center justify-between">
-                    <span className="text-gray-500 font-bold uppercase tracking-widest text-xs">{t('total')}</span>
+                    <span className="text-gray-500 font-bold uppercase tracking-widest text-2xl">{t('total')}</span>
                     <span className="text-3xl font-black text-black tracking-tighter">{formatPrice(total)}</span>
                 </div>
                 <Link href="/checkout" className="block w-full" onClick={onClose}>
