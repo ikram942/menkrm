@@ -2,10 +2,11 @@
 
 import { useLocale, useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/routing";
-import { LayoutDashboard, ShoppingBag, ShoppingCart, LogOut, Menu, X, ChevronLeft, ChevronRight } from "lucide-react";
+import { LayoutDashboard, ShoppingBag, ShoppingCart, Mail, LogOut, Menu, X, ChevronLeft, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useState, useEffect } from "react";
 import LanguageSwitcher from "../LanguageSwitcher";
+import { signOut } from "next-auth/react";
 
 export function AdminSidebar() {
     const t = useTranslations("admin");
@@ -24,6 +25,7 @@ export function AdminSidebar() {
         { href: "/admin", label: t("overview"), icon: LayoutDashboard, exact: true },
         { href: "/admin/products", label: t("products"), icon: ShoppingBag, exact: false },
         { href: "/admin/orders", label: t("orders"), icon: ShoppingCart, exact: false },
+        { href: "/admin/contacts", label: t("contacts"), icon: Mail, exact: false },
     ];
 
     return (
@@ -118,6 +120,7 @@ export function AdminSidebar() {
                             "flex items-center rounded-lg text-sm font-medium text-red-600 hover:bg-red-50 dark:hover:bg-red-950/30 transition-colors duration-200 w-full",
                             isCollapsed ? "justify-center p-3" : "gap-3 px-3 py-3"
                         )}
+                        onClick={() => signOut()}
                     >
                         <LogOut className={cn("shrink-0", isCollapsed ? "w-6 h-6" : "w-5 h-5")} />
                         {!isCollapsed && <span className="truncate">{t("logout")}</span>}

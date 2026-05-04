@@ -1,16 +1,9 @@
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/routing";
 import { SignInForm } from "@/components/sign-in-form";
-import { auth } from "@/auth";
-import { redirect } from "next/navigation";
 import GoogleButton from "@/components/google-boutton";
 
 export default async function ManageSubscription() {
-    const session = await auth();
-
-    if (session) {
-        redirect("/");
-    }
 
     const t = await getTranslations("manageSubscription");
 

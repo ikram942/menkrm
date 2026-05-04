@@ -28,10 +28,11 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
             authorize: async (credentials) => {
                 if (!credentials?.email || !credentials?.password) return null;
 
-                return await getUserFromDb(
+                const user = await getUserFromDb(
                     credentials.email as string,
                     credentials.password as string
                 );
+                return user;
             },
         }),
         Google({
@@ -46,4 +47,26 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
             }
         }),
     ],
+    session: {
+        strategy: "jwt",
+    },
+    callbacks: {
+        async jwt({ token, user }) {
+            // Initial sign in
+            if (user) {
+                token.id = user.id
+                token.role = user.role
+            }
+
+            return token
+        },
+
+        async session({ session, token }) {
+            if (session.user) {
+                session.user.id = token.id as string
+                session.user.role = token.role as string
+            }
+            return session
+        },
+    }
 })
