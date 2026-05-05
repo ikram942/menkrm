@@ -31,12 +31,12 @@ export default function ProductDetailClient({ product, price }: ProductDetailCli
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
             {/* Left: Product Image & Gallery */}
             <div className="flex flex-col space-y-6 animate-in fade-in slide-in-from-bottom-12 duration-1000">
-                <div className="relative aspect-square w-full bg-[#f8f8f8] rounded-[2.5rem] md:rounded-[4rem] overflow-hidden p-8 md:p-20 flex items-center justify-center">
+                <div className="relative aspect-square w-full bg-[#f8f8f8] rounded-[2.5rem] md:rounded-[4rem] overflow-hidden flex items-center justify-center">
                     <Image
                         src={activeImage}
                         alt={product.title}
                         fill
-                        className="object-contain p-12 md:p-24 transition-all duration-500"
+                        className="object-contain transition-all duration-500"
                         priority
                     />
                     {product.isPack && (
