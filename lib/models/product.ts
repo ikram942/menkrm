@@ -1,3 +1,4 @@
+import { MAX_IMAGES } from "@/lib/constants";
 import mongoose from "mongoose";
 
 const ProductSchema = new mongoose.Schema(
@@ -26,8 +27,8 @@ const ProductSchema = new mongoose.Schema(
         images: {
             type: [String],
             validate: [
-                (val: string[]) => val.length <= 3,
-                '{PATH} exceeds the limit of 3 images'
+                (val: string[]) => val.length <= MAX_IMAGES,
+                '{PATH} exceeds the limit of ${MAX_IMAGES} images'
             ]
         },
         category: {
@@ -37,6 +38,10 @@ const ProductSchema = new mongoose.Schema(
         usage: {
             type: String,
             required: true
+        },
+        isPack: {
+            type: Boolean,
+            default: false
         }
     },
     {

@@ -14,6 +14,11 @@ export function ProductCard({ product }: { product: any }) {
                     height={400}
                     className="object-contain transition-transform duration-700 group-hover:scale-110"
                 />
+                {product.isPack && (
+                    <div className="absolute top-4 left-4 bg-black text-white text-[10px] font-black px-3 py-1 rounded-full tracking-widest uppercase shadow-xl animate-in fade-in zoom-in duration-500">
+                        Pack
+                    </div>
+                )}
             </div>
 
             {/* Product Info */}

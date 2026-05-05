@@ -8,6 +8,8 @@ import { useState } from "react";
 import { UploadDropzone } from "@/lib/uploadthing";
 import imageCompression from "browser-image-compression";
 import "@uploadthing/react/styles.css";
+import { MAX_IMAGES } from "@/lib/constants";
+
 
 export default function AddProductPage() {
     const t = useTranslations("admin");
@@ -107,6 +109,18 @@ export default function AddProductPage() {
                                 placeholder="0"
                             />
                         </div>
+
+                        <div className="flex items-center space-x-3 pt-8">
+                            <input
+                                type="checkbox"
+                                name="isPack"
+                                id="isPack"
+                                className="w-5 h-5 rounded border-gray-300 text-mauve-600 focus:ring-mauve-500"
+                            />
+                            <label htmlFor="isPack" className="text-sm font-bold text-gray-700 dark:text-gray-300 uppercase tracking-widest cursor-pointer">
+                                This is a Pack Product
+                            </label>
+                        </div>
                     </div>
 
                     <div className="space-y-2">
@@ -145,7 +159,7 @@ export default function AddProductPage() {
 
                 <div className="bg-white dark:bg-slate-900 rounded-xl border border-gray-200 dark:border-slate-800 shadow-sm p-6 space-y-6">
                     <h3 className="text-lg font-medium text-gray-900 dark:text-white border-b border-gray-200 dark:border-slate-800 pb-4">Images</h3>
-                    <p className="text-sm text-gray-500 dark:text-gray-400">Add up to 3 images for your product. They will be automatically compressed before uploading.</p>
+                    <p className="text-sm text-gray-500 dark:text-gray-400">Add up to {MAX_IMAGES} images for your product. They will be automatically compressed before uploading.</p>
 
                     {imageUrls.length > 0 && (
                         <div className="grid grid-cols-3 gap-4 mb-4">
@@ -164,7 +178,7 @@ export default function AddProductPage() {
                         </div>
                     )}
 
-                    {imageUrls.length < 3 && (
+                    {imageUrls.length < MAX_IMAGES && (
                         <UploadDropzone
                             endpoint="productImage"
                             onBeforeUploadBegin={async (files) => {
@@ -195,7 +209,7 @@ export default function AddProductPage() {
                                 // Do something with the response
                                 console.log("Files: ", res);
                                 const newUrls = res.map((file) => file.url);
-                                setImageUrls((prev) => [...prev, ...newUrls].slice(0, 3));
+                                setImageUrls((prev) => [...prev, ...newUrls].slice(0, MAX_IMAGES));
                             }}
                             onUploadError={(error: Error) => {
                                 setError(`Upload error: ${error.message}`);

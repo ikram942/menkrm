@@ -39,6 +39,11 @@ export default function ProductDetailClient({ product, price }: ProductDetailCli
                         className="object-contain p-12 md:p-24 transition-all duration-500"
                         priority
                     />
+                    {product.isPack && (
+                        <div className="absolute top-8 left-8 md:top-12 md:left-12 bg-black text-white text-xs md:text-sm font-black px-6 py-2 rounded-full tracking-[0.2em] uppercase shadow-2xl animate-in fade-in slide-in-from-left-4 duration-700">
+                            Pack
+                        </div>
+                    )}
                 </div>
 
                 {/* Thumbnails */}

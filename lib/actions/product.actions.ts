@@ -15,6 +15,7 @@ export async function addProduct(formData: FormData) {
         const stock = Number(formData.get("stock"));
         const category = formData.get("category") as string;
         const usage = formData.get("usage") as string;
+        const isPack = formData.get("isPack") === "on" || formData.get("isPack") === "true";
         
         // Handle images array
         const images = formData.getAll("images") as string[];
@@ -28,6 +29,7 @@ export async function addProduct(formData: FormData) {
             category,
             usage,
             images,
+            isPack
         });
 
         await newProduct.save();
