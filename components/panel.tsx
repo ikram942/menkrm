@@ -94,22 +94,9 @@ import { Link } from "@/i18n/routing";
 export function CartPanel({ onClose }: { onClose?: () => void }) {
     const { cart, removeFromCart, updateQuantity } = useCart();
     const t = useTranslations("product");
-    const { currency } = useCurrency();
+    const { formatPrice } = useCurrency();
 
     const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-
-    const formatPrice = (price: number) => {
-        const symbols: Record<string, string> = {
-            MAD: "Dh",
-            EUR: "€",
-            USD: "$",
-            AED: "AED",
-            CAD: "CAD"
-        };
-        // Simple conversion for demo if needed, but here we assume price is in MAD from DB
-        // and we might want to scale it. For now, let's just use the symbol.
-        return `${price} ${symbols[currency] || "Dh"}`;
-    };
 
     if (cart.length === 0) {
         return (

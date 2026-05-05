@@ -12,7 +12,7 @@ import Image from "next/image";
 
 export function CheckoutForm() {
     const { cart, clearCart } = useCart();
-    const { currency } = useCurrency();
+    const { currency, formatPrice } = useCurrency();
     const t = useTranslations("checkout");
     const router = useRouter();
     const [loading, setLoading] = useState(false);
@@ -26,10 +26,6 @@ export function CheckoutForm() {
     });
 
     const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-
-    const formatPrice = (price: number) => {
-        return `${price} ${currency === 'MAD' ? 'Dh' : currency}`;
-    };
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });

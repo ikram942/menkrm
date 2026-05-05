@@ -5,6 +5,7 @@ import Image from "next/image"
 import { Droplets, Sparkles, Wand2 } from "lucide-react"
 import { useCart } from "@/components/panel";
 import { useTranslations } from "next-intl";
+import { useCurrency } from "@/components/CurrencyContext";
 
 interface ProductDetailClientProps {
     product: any;
@@ -15,6 +16,7 @@ export default function ProductDetailClient({ product, price }: ProductDetailCli
     const [activeImage, setActiveImage] = React.useState(product.images?.[0] || "")
     const t = useTranslations("product");
     const { addToCart } = useCart();
+    const { formatPrice } = useCurrency();
 
     const handleAddToCart = () => {
         addToCart({
@@ -65,7 +67,7 @@ export default function ProductDetailClient({ product, price }: ProductDetailCli
                         {product.title}
                     </h1>
                     <p className="text-2xl md:text-4xl font-black text-black tracking-tighter">
-                        {price}
+                        {formatPrice(product.price)}
                     </p>
                     <p className="text-lg md:text-xl text-gray-500 font-medium leading-relaxed max-w-xl">
                         {product.description}
