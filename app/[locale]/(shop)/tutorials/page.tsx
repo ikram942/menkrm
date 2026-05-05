@@ -19,7 +19,7 @@ export default function Tutorials() {
         Autoplay({ delay: 2000, stopOnInteraction: false })
     );
 
-    const images = ["/tutoriats.jpg", "/tutorials2.jpg"];
+    const images = ["/tutorials1.webp", "/tutorials2.webp"];
 
     return (
         <>
@@ -93,7 +93,7 @@ export default function Tutorials() {
                         {/* Comment 1 */}
                         <div className="group relative aspect-4/5 overflow-hidden bg-gray-50 border border-black/5 shadow-sm hover:shadow-xl transition-all duration-700">
                             <Image
-                                src="/comment1.jpeg"
+                                src="/comment1.webp"
                                 alt={t('altReview1')}
                                 fill
                                 className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -104,7 +104,7 @@ export default function Tutorials() {
                         {/* Comment 2 */}
                         <div className="group relative aspect-4/5 overflow-hidden bg-gray-50 border border-black/5 shadow-sm hover:shadow-xl transition-all duration-700">
                             <Image
-                                src="/comment2.jpeg"
+                                src="/comment2.webp"
                                 alt={t('altReview2')}
                                 fill
                                 className="object-cover transition-transform duration-700 group-hover:scale-105"
