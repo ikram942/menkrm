@@ -13,7 +13,7 @@ export default function Copyright() {
         <footer className="w-full py-8 border-t border-gray-100 flex flex-col items-center gap-6 bg-white">
             {/* Copyright Text */}
             <p className="text-gray-400 text-[14px] font-medium tracking-wide">
-                © 2026, Menscrafted. All rights reserved.
+                {t('footer')}
             </p>
 
             {/* Payment Methods */}

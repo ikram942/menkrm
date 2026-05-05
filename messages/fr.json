@@ -127,7 +127,12 @@
     "title": "Page Tutoriels",
     "subtitle": "Coiffez vos cheveux comme jamais auparavant !",
     "allProducts": "TOUS LES PRODUITS",
-    "description": "Ceci est la page des tutoriels."
+    "description": "Ceci est la page des tutoriels.",
+    "reviewsTitle": "AVIS CLIENTS",
+    "reviewsDescription": "avis de nos clients sur nos produits",
+    "altCarousel": "Tutoriel Capillaire {index}",
+    "altReview1": "Retour Client 1",
+    "altReview2": "Retour Client 2"
   },
   "manageSubscription": {
     "title": "Se connecter",

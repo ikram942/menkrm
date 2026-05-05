@@ -127,7 +127,12 @@
     "title": "Tutorials Page",
     "subtitle": "Style your hair like never before!",
     "allProducts": "ALL PRODUCTS",
-    "description": "This is the Tutorials page."
+    "description": "This is the Tutorials page.",
+    "reviewsTitle": "CLIENT FEEDBACK",
+    "reviewsDescription": "customer reviews about our products",
+    "altCarousel": "Hair Tutorial {index}",
+    "altReview1": "User Feedback 1",
+    "altReview2": "User Feedback 2"
   },
   "manageSubscription": {
     "title": "Sign in",

@@ -127,7 +127,12 @@
     "title": "صفحة البرامج التعليمية",
     "subtitle": "صفف شعرك كما لم تفعل من قبل!",
     "allProducts": "جميع المنتجات",
-    "description": "هذه هي صفحة البرامج التعليمية."
+    "description": "هذه هي صفحة البرامج التعليمية.",
+    "reviewsTitle": "آراء العملاء",
+    "reviewsDescription": "مراجعات العملاء حول منتجاتنا",
+    "altCarousel": "تعليمات الشعر {index}",
+    "altReview1": "تعليق المستخدم 1",
+    "altReview2": "تعليق المستخدم 2"
   },
   "manageSubscription": {
     "title": "تسجيل الدخول",
