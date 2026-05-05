@@ -11,11 +11,6 @@ export default function Copyright() {
 
     return (
         <footer className="w-full py-8 border-t border-gray-100 flex flex-col items-center gap-6 bg-white">
-            {/* Copyright Text */}
-            <p className="text-gray-400 text-[14px] font-medium tracking-wide">
-                {t('footer')}
-            </p>
-
             {/* Payment Methods */}
             <div className="flex items-center gap-3 flex-wrap justify-center opacity-80">
                 <div className="bg-white border border-gray-100 px-2 py-1 rounded shadow-sm">
@@ -37,6 +32,10 @@ export default function Copyright() {
                     <SiGooglepay className="text-[#4285F4] text-2xl" />
                 </div>
             </div>
+            {/* Copyright Text */}
+            <p className="text-gray-400 text-[14px] font-medium tracking-wide">
+                {t('footer')}
+            </p>
         </footer>
     );
 }
