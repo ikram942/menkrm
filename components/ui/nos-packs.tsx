@@ -3,17 +3,19 @@ import { getTranslations } from "next-intl/server";
 import { getProducts } from "@/lib/products";
 import { ProductCard } from "../products/product-card";
 
-export default async function Prod() {
+export default async function NosPacks() {
     const t = await getTranslations("product")
-    const products = await getProducts({ isPack: false })
+    const products = await getProducts({ isPack: true })
+
+    if (products.length === 0) return null;
 
     return (
-        <section className="py-24 bg-white">
+        <section className="py-24 bg-white border-t border-gray-50">
             <div className="max-w-7xl mx-auto px-4">
                 {/* Section Header */}
                 <div className="text-center mb-20">
                     <h2 className="text-4xl md:text-5xl font-black text-gray-900 tracking-widest uppercase">
-                        {t('nosProduits')}
+                        {t('nosPacks')}
                     </h2>
                 </div>
 
