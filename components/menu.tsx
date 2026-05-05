@@ -4,7 +4,6 @@ import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/co
 import { MenuIcon } from "lucide-react";
 import { useTranslations, useLocale } from "next-intl";
 import { FaFacebookF, FaInstagram, FaWhatsapp, FaTiktok } from "react-icons/fa";
-
 import { useCurrency } from "@/components/CurrencyContext";
 import { Link } from "@/i18n/routing";
 import { useState } from "react";

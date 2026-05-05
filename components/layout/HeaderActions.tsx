@@ -1,12 +1,11 @@
 "use client"
 import { ShoppingCartIcon, LogOut } from "lucide-react";
-import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useTranslations } from "next-intl";
 import { useSession, signOut } from "next-auth/react";
 import { useCurrency } from "@/components/CurrencyContext";
-import { ConnectedUser } from "@/components/connected-user";
 import { Search } from "@/components/search";
 import { useCart, CartPanel } from "@/components/panel";
 
@@ -42,7 +41,7 @@ export function HeaderIcons() {
 
     return (
         <>
-            <ConnectedUser />
+            {/* <ConnectedUser />  */}
 
             {session && (
                 <button onClick={() => signOut()} className="text-gray-500 hover:text-black transition-colors" title="Sign Out">
