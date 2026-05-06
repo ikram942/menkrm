@@ -7,11 +7,11 @@ import { useTranslations } from "next-intl";
 import { createOrder } from "@/lib/actions/order";
 import { toast } from "sonner";
 import { useRouter } from "@/i18n/routing";
-import { Loader2, ShoppingCart } from "lucide-react";
+import { Loader2, ShoppingCart, Trash2 } from "lucide-react";
 import Image from "next/image";
 
 export function CheckoutForm() {
-    const { cart, clearCart } = useCart();
+    const { cart, clearCart, removeFromCart } = useCart();
     const { currency, formatPrice } = useCurrency();
     const t = useTranslations("checkout");
     const router = useRouter();
@@ -178,6 +178,13 @@ export function CheckoutForm() {
                                 <div className="text-sm font-black text-gray-900">
                                     {formatPrice(item.price * item.quantity)}
                                 </div>
+                                <button
+                                    onClick={() => removeFromCart(item._id)}
+                                    className="p-2 text-gray-300 hover:text-red-500 transition-colors"
+                                    title="Supprimer"
+                                >
+                                    <Trash2 className="w-4 h-4" />
+                                </button>
                             </div>
                         ))}
                     </div>
