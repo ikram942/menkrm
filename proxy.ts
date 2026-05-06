@@ -12,8 +12,7 @@ export default auth((req) => {
     if (isAdmin && startsWith(pathname, "/admin/login")) return Response.redirect(new URL("/admin", req.nextUrl))
     if (!req.auth && startsWith(pathname, "/admin") && !startsWith(pathname, "/admin/login")) return Response.redirect(new URL("/admin/login", req.nextUrl))
     if (!isAdmin && req.auth && startsWith(pathname, "/admin")) return Response.redirect(new URL("/", req.nextUrl))
-    if (req.auth && startsWith(pathname, "/manage-subscription")) return Response.redirect(new URL("/", req.nextUrl))
-    if (!req.auth && !startsWith(pathname, "/manage-subscription") && !startsWith(pathname, "/admin/login")) return Response.redirect(new URL("/manage-subscription", req.nextUrl))
+
 
     return intlMiddleware(req);
 });
