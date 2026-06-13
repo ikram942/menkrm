@@ -23,8 +23,6 @@ export default function Tutorials() {
 
     const videos = [
         { id: 1, src: "/mensavil.mp4" },
-        { id: 2, src: "/mensavil.mp4" },
-        { id: 3, src: "/mensavil.mp4" },
     ];
 
     return (
