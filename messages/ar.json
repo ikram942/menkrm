@@ -133,7 +133,9 @@
     "reviewsDescription": "مراجعات العملاء حول منتجاتنا",
     "altCarousel": "تعليمات الشعر {index}",
     "altReview1": "تعليق المستخدم 1",
-    "altReview2": "تعليق المستخدم 2"
+    "altReview2": "تعليق المستخدم 2",
+    "publicationsTitle": "المنشورات",
+    "publicationsDescription": "اكتشف أحدث مقاطع الفيديو والبرامج التعليمية الخاصة بنا"
   },
   "manageSubscription": {
     "title": "تسجيل الدخول",

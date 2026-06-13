@@ -133,7 +133,9 @@
     "reviewsDescription": "customer reviews about our products",
     "altCarousel": "Hair Tutorial {index}",
     "altReview1": "User Feedback 1",
-    "altReview2": "User Feedback 2"
+    "altReview2": "User Feedback 2",
+    "publicationsTitle": "PUBLICATIONS",
+    "publicationsDescription": "Discover our video tutorials and tips in action"
   },
   "manageSubscription": {
     "title": "Sign in",

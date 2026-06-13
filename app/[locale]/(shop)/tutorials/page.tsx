@@ -21,6 +21,12 @@ export default function Tutorials() {
 
     const images = ["/tutorials1.webp", "/tutorials2.webp"];
 
+    const videos = [
+        { id: 1, src: "/mensavil.mp4" },
+        { id: 2, src: "/mensavil.mp4" },
+        { id: 3, src: "/mensavil.mp4" },
+    ];
+
     return (
         <>
             {/* Hero Section with Carousel */}
@@ -78,6 +84,34 @@ export default function Tutorials() {
                     </div>
                 </div>
             </div>
+
+            {/* Publications Section */}
+            <section className="bg-gray-50 py-24 md:py-32 border-b border-black/5">
+                <div className="container mx-auto px-6 md:px-12">
+                    <div className="text-center mb-20">
+                        <h2 className="text-3xl md:text-5xl font-extralight tracking-[0.2em] uppercase text-black/90 mb-6">
+                            {t('publicationsTitle')}
+                        </h2>
+                        <div className="w-20 h-px bg-black/20 mx-auto mb-6" />
+                        <p className="text-sm font-light text-black/40 uppercase tracking-[0.3em]">
+                            {t('publicationsDescription')}
+                        </p>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                        {videos.map((video) => (
+                            <div key={video.id} className="aspect-[9/16] rounded-xl overflow-hidden shadow-lg border border-black/10 bg-black hover:shadow-xl hover:scale-[1.02] transition-all duration-300">
+                                <video
+                                    src={video.src}
+                                    controls
+                                    playsInline
+                                    className="w-full h-full object-cover"
+                                />
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
 
             {/* User Comments Section */}
             <section className="bg-white py-24 md:py-32">

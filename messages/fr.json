@@ -133,7 +133,9 @@
     "reviewsDescription": "avis de nos clients sur nos produits",
     "altCarousel": "Tutoriel Capillaire {index}",
     "altReview1": "Retour Client 1",
-    "altReview2": "Retour Client 2"
+    "altReview2": "Retour Client 2",
+    "publicationsTitle": "PUBLICATIONS",
+    "publicationsDescription": "Découvrez nos tutoriels vidéos et conseils en action"
   },
   "manageSubscription": {
     "title": "Se connecter",
